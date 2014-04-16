@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>71B3B229-EB9A-47A5-8EB2-F49B5CB65AB4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Axon2048</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>186574D5-0948-4247-B3E2-832F60E3207E</key>
+		<string>https://github.com/JamesZinger/Axon2048.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Axon2048/Axon2048.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>186574D5-0948-4247-B3E2-832F60E3207E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/JamesZinger/Axon2048.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>186574D5-0948-4247-B3E2-832F60E3207E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>186574D5-0948-4247-B3E2-832F60E3207E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Axon2048</string>
+		</dict>
+	</array>
+</dict>
+</plist>
