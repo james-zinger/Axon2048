@@ -17,13 +17,13 @@
 		66D9E7A918FF1F25000B74AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E7A718FF1F25000B74AC /* Main.storyboard */; };
 		66D9E7AC18FF1F25000B74AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7AB18FF1F25000B74AC /* ViewController.m */; };
 		66D9E7AF18FF1F25000B74AC /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7AE18FF1F25000B74AC /* MyScene.m */; };
-		66D9E7B118FF1F25000B74AC /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E7B018FF1F25000B74AC /* Spaceship.png */; };
 		66D9E7B318FF1F25000B74AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E7B218FF1F25000B74AC /* Images.xcassets */; };
 		66D9E7BA18FF1F25000B74AC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E7B918FF1F25000B74AC /* XCTest.framework */; };
 		66D9E7BB18FF1F25000B74AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79318FF1F25000B74AC /* Foundation.framework */; };
 		66D9E7BC18FF1F25000B74AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79718FF1F25000B74AC /* UIKit.framework */; };
 		66D9E7C418FF1F25000B74AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E7C218FF1F25000B74AC /* InfoPlist.strings */; };
 		66D9E7C618FF1F25000B74AC /* Axon2048Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7C518FF1F25000B74AC /* Axon2048Tests.m */; };
+		66D9E7D118FF2267000B74AC /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7D018FF2267000B74AC /* GameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +53,15 @@
 		66D9E7AB18FF1F25000B74AC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		66D9E7AD18FF1F25000B74AC /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		66D9E7AE18FF1F25000B74AC /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		66D9E7B018FF1F25000B74AC /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		66D9E7B218FF1F25000B74AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		66D9E7B818FF1F25000B74AC /* Axon2048Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Axon2048Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D9E7B918FF1F25000B74AC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		66D9E7C118FF1F25000B74AC /* Axon2048Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Axon2048Tests-Info.plist"; sourceTree = "<group>"; };
 		66D9E7C318FF1F25000B74AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		66D9E7C518FF1F25000B74AC /* Axon2048Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Axon2048Tests.m; sourceTree = "<group>"; };
+		66D9E7CF18FF2267000B74AC /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		66D9E7D018FF2267000B74AC /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		66D9E7D318FF288F000B74AC /* TileIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileIndex.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,8 @@
 		66D9E79B18FF1F25000B74AC /* Axon2048 */ = {
 			isa = PBXGroup;
 			children = (
+				66D9E7D318FF288F000B74AC /* TileIndex.h */,
+				66D9E7D218FF27A5000B74AC /* GameModel */,
 				66D9E7A418FF1F25000B74AC /* AppDelegate.h */,
 				66D9E7A518FF1F25000B74AC /* AppDelegate.m */,
 				66D9E7A718FF1F25000B74AC /* Main.storyboard */,
@@ -128,7 +132,6 @@
 				66D9E7AB18FF1F25000B74AC /* ViewController.m */,
 				66D9E7AD18FF1F25000B74AC /* MyScene.h */,
 				66D9E7AE18FF1F25000B74AC /* MyScene.m */,
-				66D9E7B018FF1F25000B74AC /* Spaceship.png */,
 				66D9E7B218FF1F25000B74AC /* Images.xcassets */,
 				66D9E79C18FF1F25000B74AC /* Supporting Files */,
 			);
@@ -162,6 +165,15 @@
 				66D9E7C218FF1F25000B74AC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66D9E7D218FF27A5000B74AC /* GameModel */ = {
+			isa = PBXGroup;
+			children = (
+				66D9E7CF18FF2267000B74AC /* GameModel.h */,
+				66D9E7D018FF2267000B74AC /* GameModel.m */,
+			);
+			name = GameModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +254,6 @@
 			files = (
 				66D9E7A018FF1F25000B74AC /* InfoPlist.strings in Resources */,
 				66D9E7B318FF1F25000B74AC /* Images.xcassets in Resources */,
-				66D9E7B118FF1F25000B74AC /* Spaceship.png in Resources */,
 				66D9E7A918FF1F25000B74AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +275,7 @@
 			files = (
 				66D9E7AF18FF1F25000B74AC /* MyScene.m in Sources */,
 				66D9E7AC18FF1F25000B74AC /* ViewController.m in Sources */,
+				66D9E7D118FF2267000B74AC /* GameModel.m in Sources */,
 				66D9E7A618FF1F25000B74AC /* AppDelegate.m in Sources */,
 				66D9E7A218FF1F25000B74AC /* main.m in Sources */,
 			);
