@@ -10,8 +10,8 @@
 
 typedef enum
 {
-    UP,
+    UP = 0,
     DOWN,
     LEFT,
     RIGHT
-} SWIPE_DIRECTION;
+} DIRECTION;

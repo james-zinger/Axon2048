@@ -8,22 +8,19 @@
 
 #import "GameModel.h"
 
-#include "Board.h"
-
 @implementation GameModel
 
-Board* board;
 bool isInitalized = NO;
 
 // Start the game with a board of the size specified
 - (void)startGame:(int)WithBoardSize
 {
-    board = [[Board alloc] initWithSize:3];
+    _Board = [[Board alloc] initWithSize:3];
     isInitalized = YES;
 }
 
 // Update the game model by one step
-- (NSMutableArray*) UpdateWithDirection:(SWIPE_DIRECTION)Direction
+- (NSMutableArray*) UpdateWithDirection:(DIRECTION)Direction
 {
     if (!isInitalized)
     {
@@ -31,17 +28,13 @@ bool isInitalized = NO;
         return nil;
     }
     
-    return [board Update:Direction];
+    return [_Board Update:Direction];
 }
 
 // Adds a random tile
-- (TileIndex) addRandomTile
+- (TileIndex) addRandomCard
 {
-    TileIndex index;
-    index.x = -1;
-    index.y = -1;
-    
-    return index;
+    return [_Board addCardAtRandomIndex];
 }
 
 // Singleton instance variable

@@ -8,19 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-#include "Tileindex.h"
-#include "Direction.h"
+
+#import "Tileindex.h"
+#import "Direction.h"
+#import "Board.h"
 
 @interface GameModel : NSObject
+
+@property (readonly) Board* Board;
 
 // Initalize the game model
 - (void) startGame: (int) WithBoardSize;
 
 // Updates the game model by one step
-- (NSMutableArray*) UpdateWithDirection: (SWIPE_DIRECTION) Direction;
+- (NSMutableArray*) UpdateWithDirection: (DIRECTION) Direction;
 
 // Attempts to add a random tile to the board
-- (TileIndex) addRandomTile;
+- (TileIndex) addRandomCard;
 
 // The singleton access to the game model
 + (GameModel*) Instance;

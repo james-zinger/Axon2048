@@ -8,15 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-#include "Tileindex.h"
-#include "Direction.h"
+#import "Tileindex.h"
+#import "Direction.h"
+#import "Tile.h"
 
 @interface Board : NSObject
 
+- (Tile*) getTileAtIndex:(TileIndex)Index;
+
 - (BOOL) addCardAtIndex:(TileIndex)Index;
+
+- (TileIndex) addCardAtRandomIndex;
 
 - (id) initWithSize: (int) Size;
 
-- (NSMutableArray*) Update:(SWIPE_DIRECTION) Direction;
+- (NSMutableArray*) Update:(DIRECTION) Direction;
 
 @end
