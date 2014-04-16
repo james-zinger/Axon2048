@@ -8,20 +8,33 @@
 
 #import "GameModel.h"
 
+#include "Board.h"
+
 @implementation GameModel
 
+Board* board;
+bool isInitalized = NO;
+
 // Start the game with a board of the size specified
-- (void)startGame:(int)withBoardSize
+- (void)startGame:(int)WithBoardSize
 {
-    
+    board = [[Board alloc] initWithSize:3];
+    isInitalized = YES;
 }
 
-- (NSMutableArray*) Update:(SWIPE_DIRECTION)withDirection
+// Update the game model by one step
+- (NSMutableArray*) UpdateWithDirection:(SWIPE_DIRECTION)Direction
 {
+    if (!isInitalized)
+    {
+        printf("Cannot update if the game is not initalized");
+        return nil;
+    }
     
-    return nil;
+    return [board Update:Direction];
 }
 
+// Adds a random tile
 - (TileIndex) addRandomTile
 {
     TileIndex index;
@@ -31,6 +44,7 @@
     return index;
 }
 
+// Singleton instance variable
 static GameModel* instance = nil;
 
 // Singleton method

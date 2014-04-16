@@ -1,5 +1,5 @@
 //
-//  TileIndex.h
+//  Direction.h
 //  Axon2048
 //
 //  Created by ZINGER JAMES J. on 2014-04-16.
@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-typedef struct
+typedef enum
 {
-    int x;
-    int y;
-} TileIndex ;
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT
+} SWIPE_DIRECTION;

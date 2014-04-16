@@ -8,21 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-#include "TileIndex.h"
-
-typedef enum {
-    UP = 0,
-    DOWN,
-    LEFT,
-    RIGHT
-} SWIPE_DIRECTION;
+#include "Tileindex.h"
+#include "Direction.h"
 
 @interface GameModel : NSObject
 
-- (void) startGame: (int) withBoardSize;
+// Initalize the game model
+- (void) startGame: (int) WithBoardSize;
 
-- (NSMutableArray*) Update: (SWIPE_DIRECTION) withDirection;
+// Updates the game model by one step
+- (NSMutableArray*) UpdateWithDirection: (SWIPE_DIRECTION) Direction;
 
+// Attempts to add a random tile to the board
 - (TileIndex) addRandomTile;
 
 // The singleton access to the game model
