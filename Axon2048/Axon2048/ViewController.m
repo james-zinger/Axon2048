@@ -18,6 +18,16 @@
 
     [GameModel Instance];
     
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;

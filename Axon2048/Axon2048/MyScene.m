@@ -14,6 +14,13 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
+        
+        // Font selection for labels
+        //UILabel *scoreLabel = nil;
+        //scoreLabel.font = [UIFont fontWithName:@"Ubuntu-Bold" size:24];
+        
+        
+        
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];

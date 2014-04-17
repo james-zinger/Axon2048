@@ -44,9 +44,10 @@
 		3E6E1D4B18FF6ACF00547F78 /* Title-Credits-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D4918FF6ACF00547F78 /* Title-Credits-Button.png */; };
 		3E6E1D4C18FF6ACF00547F78 /* Title-Options-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D4A18FF6ACF00547F78 /* Title-Options-Button.png */; };
 		3E6E1D4E18FF6B8300547F78 /* Title-Leaderboard-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D4D18FF6B8300547F78 /* Title-Leaderboard-Button.png */; };
-		3E752E8B18FF6F2100CE4767 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E752E8918FF6F2100CE4767 /* Ubuntu-B.ttf */; };
-		3E752E8C18FF6F2100CE4767 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E752E8A18FF6F2100CE4767 /* Ubuntu-R.ttf */; };
 		3E752E8E18FF70FA00CE4767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E752E8D18FF70FA00CE4767 /* Main.storyboard */; };
+		3E81702A18FF7956006CFCC8 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E81702818FF7956006CFCC8 /* Ubuntu-B.ttf */; };
+		3E81702B18FF7956006CFCC8 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E81702918FF7956006CFCC8 /* Ubuntu-R.ttf */; };
+		3EAE3E2718FF73D0000992D5 /* Cardaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE3E2618FF73D0000992D5 /* Cardaction.m */; };
 		66D9E79418FF1F25000B74AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79318FF1F25000B74AC /* Foundation.framework */; };
 		66D9E79618FF1F25000B74AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79518FF1F25000B74AC /* CoreGraphics.framework */; };
 		66D9E79818FF1F25000B74AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79718FF1F25000B74AC /* UIKit.framework */; };
@@ -116,9 +117,11 @@
 		3E6E1D4918FF6ACF00547F78 /* Title-Credits-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Credits-Button.png"; sourceTree = "<group>"; };
 		3E6E1D4A18FF6ACF00547F78 /* Title-Options-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Options-Button.png"; sourceTree = "<group>"; };
 		3E6E1D4D18FF6B8300547F78 /* Title-Leaderboard-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Leaderboard-Button.png"; sourceTree = "<group>"; };
-		3E752E8918FF6F2100CE4767 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-B.ttf"; path = "Fonts/Ubuntu-B.ttf"; sourceTree = "<group>"; };
-		3E752E8A18FF6F2100CE4767 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-R.ttf"; path = "Fonts/Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		3E752E8D18FF70FA00CE4767 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Axon2048/Main.storyboard; sourceTree = "<group>"; };
+		3E81702818FF7956006CFCC8 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
+		3E81702918FF7956006CFCC8 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
+		3EAE3E2518FF73D0000992D5 /* CardAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAction.h; sourceTree = "<group>"; };
+		3EAE3E2618FF73D0000992D5 /* Cardaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cardaction.m; sourceTree = "<group>"; };
 		66D9E79018FF1F25000B74AC /* Axon2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Axon2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D9E79318FF1F25000B74AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66D9E79518FF1F25000B74AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -292,13 +295,13 @@
 			path = credits;
 			sourceTree = "<group>";
 		};
-		3E752E8818FF6EC800CE4767 /* Fonts */ = {
+		3E81702718FF7956006CFCC8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				3E752E8918FF6F2100CE4767 /* Ubuntu-B.ttf */,
-				3E752E8A18FF6F2100CE4767 /* Ubuntu-R.ttf */,
+				3E81702818FF7956006CFCC8 /* Ubuntu-B.ttf */,
+				3E81702918FF7956006CFCC8 /* Ubuntu-R.ttf */,
 			);
-			name = Fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		66D9E78718FF1F25000B74AC = {
@@ -336,7 +339,9 @@
 		66D9E79B18FF1F25000B74AC /* Axon2048 */ = {
 			isa = PBXGroup;
 			children = (
-				3E752E8818FF6EC800CE4767 /* Fonts */,
+				3E81702718FF7956006CFCC8 /* Fonts */,
+				3EAE3E2518FF73D0000992D5 /* CardAction.h */,
+				3EAE3E2618FF73D0000992D5 /* Cardaction.m */,
 				3E6E1CF918FF597000547F78 /* Sound */,
 				3E6E1CFC18FF597000547F78 /* Textures */,
 				66D9E7D318FF288F000B74AC /* Tileindex.h */,
@@ -482,7 +487,7 @@
 				66D9E7A018FF1F25000B74AC /* InfoPlist.strings in Resources */,
 				3E6E1D2418FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 in Resources */,
 				3E6E1D2718FF597000547F78 /* Save-Button.png in Resources */,
-				3E752E8B18FF6F2100CE4767 /* Ubuntu-B.ttf in Resources */,
+				3E81702A18FF7956006CFCC8 /* Ubuntu-B.ttf in Resources */,
 				66D9E7B318FF1F25000B74AC /* Images.xcassets in Resources */,
 				3E6E1D3018FF597000547F78 /* Tile-32.png in Resources */,
 				3E6E1D3718FF597000547F78 /* Lose-Background.png in Resources */,
@@ -504,7 +509,7 @@
 				3E6E1D3918FF597000547F78 /* Lose-Main-Menu-Button.png in Resources */,
 				3E6E1D2918FF597000547F78 /* Gameplay-Background.png in Resources */,
 				3E6E1D2518FF597000547F78 /* Menu-Button.png in Resources */,
-				3E752E8C18FF6F2100CE4767 /* Ubuntu-R.ttf in Resources */,
+				3E81702B18FF7956006CFCC8 /* Ubuntu-R.ttf in Resources */,
 				3E6E1D3618FF597000547F78 /* Leaderboard-Background.png in Resources */,
 				3E6E1D3818FF597000547F78 /* Lose-Leaderboard-Button.png in Resources */,
 				3E6E1D4818FF622D00547F78 /* Credits-Main-Menu-Button.png in Resources */,
@@ -538,6 +543,7 @@
 				66D9E7AF18FF1F25000B74AC /* MyScene.m in Sources */,
 				66D9E7AC18FF1F25000B74AC /* ViewController.m in Sources */,
 				66D9E7E118FF36C2000B74AC /* Card.m in Sources */,
+				3EAE3E2718FF73D0000992D5 /* Cardaction.m in Sources */,
 				66D9E7D118FF2267000B74AC /* GameModel.m in Sources */,
 				66D9E7A618FF1F25000B74AC /* AppDelegate.m in Sources */,
 				66D9E7DE18FF30C8000B74AC /* Tile.m in Sources */,
