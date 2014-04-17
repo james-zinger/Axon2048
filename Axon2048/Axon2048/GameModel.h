@@ -23,6 +23,8 @@
 // Attempts to add a random tile to the board
 - (TileIndex) addRandomCard;
 
+- (int) getScore;
+
 // The singleton access to the game model
 + (GameModel*) Instance;
 

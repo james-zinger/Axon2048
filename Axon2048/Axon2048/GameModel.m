@@ -32,6 +32,11 @@
     return [_Board addCardAtRandomIndex];
 }
 
+- (int) getScore
+{
+    return [_Board getScore];
+}
+
 // Singleton instance variable
 static GameModel* instance = nil;
 

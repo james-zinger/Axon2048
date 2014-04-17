@@ -74,7 +74,7 @@
 		66D9E7DF18FF36C2000B74AC /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		66D9E7E018FF36C2000B74AC /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		66D9E7E518FF5CE2000B74AC /* CardAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAction.m; sourceTree = "<group>"; };
-		66D9E7E718FF5CFF000B74AC /* CardAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardAction.h; path = ../CardAction.h; sourceTree = "<group>"; };
+		66D9E85D18FF72B3000B74AC /* CardAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAction.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,9 +136,9 @@
 		66D9E79B18FF1F25000B74AC /* Axon2048 */ = {
 			isa = PBXGroup;
 			children = (
+				66D9E85D18FF72B3000B74AC /* CardAction.h */,
 				66D9E7D318FF288F000B74AC /* Tileindex.h */,
 				66D9E7D918FF2BE2000B74AC /* Direction.h */,
-				66D9E7E718FF5CFF000B74AC /* CardAction.h */,
 				66D9E7D218FF27A5000B74AC /* GameModel */,
 				66D9E7AA18FF1F25000B74AC /* ViewController.h */,
 				66D9E7AD18FF1F25000B74AC /* MyScene.h */,

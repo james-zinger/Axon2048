@@ -109,6 +109,16 @@ int _Size;
     return array;
 }
 
+-(int) getScore
+{
+    int sum = 0;
+    for (Card* c in _Cards)
+    {
+        sum += c.Value;
+    }
+    return sum;
+}
+
 -(Tile *)getTileAtIndex:(TileIndex)Index
 {
     Tile* tile = nil;
