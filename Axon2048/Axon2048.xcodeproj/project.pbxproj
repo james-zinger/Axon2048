@@ -27,6 +27,7 @@
 		66D9E7D818FF2AF1000B74AC /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7D718FF2AF1000B74AC /* Board.m */; };
 		66D9E7DE18FF30C8000B74AC /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7DD18FF30C8000B74AC /* Tile.m */; };
 		66D9E7E118FF36C2000B74AC /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7E018FF36C2000B74AC /* Card.m */; };
+		66D9E7E618FF5CE2000B74AC /* CardAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7E518FF5CE2000B74AC /* CardAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		66D9E7DD18FF30C8000B74AC /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
 		66D9E7DF18FF36C2000B74AC /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		66D9E7E018FF36C2000B74AC /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		66D9E7E518FF5CE2000B74AC /* CardAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAction.m; sourceTree = "<group>"; };
+		66D9E7E718FF5CFF000B74AC /* CardAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardAction.h; path = ../CardAction.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,17 +137,19 @@
 			isa = PBXGroup;
 			children = (
 				66D9E7D318FF288F000B74AC /* Tileindex.h */,
+				66D9E7D918FF2BE2000B74AC /* Direction.h */,
+				66D9E7E718FF5CFF000B74AC /* CardAction.h */,
 				66D9E7D218FF27A5000B74AC /* GameModel */,
-				66D9E7A418FF1F25000B74AC /* AppDelegate.h */,
-				66D9E7A518FF1F25000B74AC /* AppDelegate.m */,
-				66D9E7A718FF1F25000B74AC /* Main.storyboard */,
 				66D9E7AA18FF1F25000B74AC /* ViewController.h */,
-				66D9E7AB18FF1F25000B74AC /* ViewController.m */,
 				66D9E7AD18FF1F25000B74AC /* MyScene.h */,
+				66D9E7A418FF1F25000B74AC /* AppDelegate.h */,
+				66D9E7A718FF1F25000B74AC /* Main.storyboard */,
+				66D9E7E518FF5CE2000B74AC /* CardAction.m */,
+				66D9E7A518FF1F25000B74AC /* AppDelegate.m */,
+				66D9E7AB18FF1F25000B74AC /* ViewController.m */,
 				66D9E7AE18FF1F25000B74AC /* MyScene.m */,
 				66D9E7B218FF1F25000B74AC /* Images.xcassets */,
 				66D9E79C18FF1F25000B74AC /* Supporting Files */,
-				66D9E7D918FF2BE2000B74AC /* Direction.h */,
 			);
 			path = Axon2048;
 			sourceTree = "<group>";
@@ -182,12 +187,12 @@
 			isa = PBXGroup;
 			children = (
 				66D9E7CF18FF2267000B74AC /* GameModel.h */,
-				66D9E7D018FF2267000B74AC /* GameModel.m */,
 				66D9E7D618FF2AF1000B74AC /* Board.h */,
-				66D9E7D718FF2AF1000B74AC /* Board.m */,
 				66D9E7DC18FF30C8000B74AC /* Tile.h */,
-				66D9E7DD18FF30C8000B74AC /* Tile.m */,
 				66D9E7DF18FF36C2000B74AC /* Card.h */,
+				66D9E7D018FF2267000B74AC /* GameModel.m */,
+				66D9E7D718FF2AF1000B74AC /* Board.m */,
+				66D9E7DD18FF30C8000B74AC /* Tile.m */,
 				66D9E7E018FF36C2000B74AC /* Card.m */,
 			);
 			name = GameModel;
@@ -296,6 +301,7 @@
 				66D9E7E118FF36C2000B74AC /* Card.m in Sources */,
 				66D9E7D118FF2267000B74AC /* GameModel.m in Sources */,
 				66D9E7A618FF1F25000B74AC /* AppDelegate.m in Sources */,
+				66D9E7E618FF5CE2000B74AC /* CardAction.m in Sources */,
 				66D9E7DE18FF30C8000B74AC /* Tile.m in Sources */,
 				66D9E7A218FF1F25000B74AC /* main.m in Sources */,
 			);
