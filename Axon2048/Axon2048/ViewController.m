@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MyScene.h"
+#import "GameModel.h"
 
 @implementation ViewController
 
@@ -15,6 +16,8 @@
 {
     [super viewDidLoad];
 
+    [GameModel Instance];
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;

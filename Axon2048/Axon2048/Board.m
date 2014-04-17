@@ -10,6 +10,7 @@
 
 @implementation Board
 
+NSMutableArray* _Cards;
 NSMutableArray* _TileGrid;
 int _Size;
 
@@ -20,17 +21,20 @@ int _Size;
     _Size = Size;
     
     _TileGrid = [[NSMutableArray alloc] initWithCapacity: Size];
-    for (int i = 0; i < [_TileGrid count]; i++)
+    for (int i = 0; i < Size; i++)
     {
-        _TileGrid[i] = [[NSMutableArray alloc] initWithCapacity: Size];
-        for (int j = 0; j < [_TileGrid[i] count]; i++)
+        [_TileGrid addObject:[[NSMutableArray alloc] initWithCapacity: Size]];
+        for (int j = 0; j < Size; j++)
         {
+            
             TileIndex index;
             index.x = i;
             index.y = j;
             _TileGrid[i][j] = [[Tile alloc]initAtIndex:index];
         }
     }
+    
+    _Cards = [[NSMutableArray alloc] initWithCapacity:Size*Size];
     
     return self;
 }
@@ -44,7 +48,11 @@ int _Size;
         return false;
     }
     
-    tile.Card = [[Card alloc] initWithValue:2 AndTile:tile];
+    Card* card = [[Card alloc] initWithValue:2 AndTile:tile];
+    
+    [_Cards addObject:card];
+    
+    tile.Card = card;
     
     return true;
 }
@@ -68,6 +76,8 @@ int _Size;
 
     Card* newCard = [[Card alloc] initWithValue:2 AndTile:tile];
     
+    [_Cards addObject:newCard];
+    
     tile.Card = newCard;
     
     return tile.Index;
@@ -75,8 +85,27 @@ int _Size;
 
 - (NSMutableArray*) Update:(DIRECTION)Direction
 {
-    // TODO
-    return nil;
+    NSMutableArray* array;
+    
+    switch (Direction) {
+        case UP:
+            array = [self UpdateUp];
+            break;
+        
+        case DOWN:
+            array = [self UpdateDown];
+            break;
+            
+        case RIGHT:
+            array = [self UpdateRight];
+            break;
+            
+        case LEFT:
+            array = [self UpdateLeft];
+            break;
+    }
+    
+    return array;
 }
 
 -(Tile *)getTileAtIndex:(TileIndex)Index
@@ -116,6 +145,77 @@ int _Size;
     }
     
     return tileArray;
+}
+
+- (BOOL) checkIfBoardIsFull
+{
+    return ([_Cards count] == _Size*_Size);
+}
+
+// Update
+// Forward   0    -  Size
+// Backward Size  -  0
+// Row - X
+// Col - Y
+
+- (NSMutableArray*) UpdateUp
+{
+    // Row Forward
+    // Col Forward
+    for (int x = 0; x < _Size; x++)
+    {
+        for (int y = 0; y < _Size; y++)
+        {
+            Tile* tile = _TileGrid[x][y];
+            
+            
+        }
+    }
+    
+    return nil;
+}
+
+- (NSMutableArray*) UpdateDown
+{
+    // Row Backward
+    // Col Forward
+    for (int x = _Size - 1; x < 0; x--)
+    {
+        for (int y = 0; y < _Size; y++)
+        {
+            Tile* tile = _TileGrid[x][y];
+        }
+    }
+    return nil;
+}
+
+- (NSMutableArray*) UpdateLeft
+{
+    // Col Forward
+    // Row Forward
+    for (int y = 0; y < _Size; y++)
+    {
+        for (int x = 0; x < _Size; x++)
+        {
+            Tile* tile = _TileGrid[x][y];
+        }
+    }
+    
+    return nil;
+}
+
+- (NSMutableArray*) UpdateRight
+{
+    //Col Backward
+    //Row Forward
+    for (int y = _Size - 1; y < 0; y--)
+    {
+        for (int x = 0; x < _Size; x++)
+        {
+            Tile* tile = _TileGrid[x][y];
+        }
+    }
+    return nil;
 }
 
 @end

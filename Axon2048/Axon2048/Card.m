@@ -34,4 +34,9 @@
     return self;
 }
 
+- (void)doubleValue
+{
+    _Value *= 2;
+}
+
 @end

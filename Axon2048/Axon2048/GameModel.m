@@ -10,24 +10,19 @@
 
 @implementation GameModel
 
-bool isInitalized = NO;
 
-// Start the game with a board of the size specified
-- (void)startGame:(int)WithBoardSize
+-(id) init
 {
-    _Board = [[Board alloc] initWithSize:3];
-    isInitalized = YES;
+    self = [super init];
+    
+    _Board = [[Board alloc] initWithSize:4];
+    
+    return self;
 }
 
 // Update the game model by one step
 - (NSMutableArray*) UpdateWithDirection:(DIRECTION)Direction
 {
-    if (!isInitalized)
-    {
-        printf("Cannot update if the game is not initalized");
-        return nil;
-    }
-    
     return [_Board Update:Direction];
 }
 

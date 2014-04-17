@@ -8,15 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Tile.h"
+@class Tile;
 
 @interface Card : NSObject
 
-@property int Value;
+@property (readonly) int Value;
 @property (weak) Tile* Tile;
 
 - (id) initWithValue: (int) Value;
 
 - (id) initWithValue: (int) Value AndTile: (Tile*) Tile;
+
+- (void) doubleValue;
 
 @end

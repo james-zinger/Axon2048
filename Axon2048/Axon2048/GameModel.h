@@ -17,9 +17,6 @@
 
 @property (readonly) Board* Board;
 
-// Initalize the game model
-- (void) startGame: (int) WithBoardSize;
-
 // Updates the game model by one step
 - (NSMutableArray*) UpdateWithDirection: (DIRECTION) Direction;
 

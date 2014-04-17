@@ -21,8 +21,6 @@ Board* _board;
 
     _Card = nil;
     
-    _board = [[GameModel Instance] Board];
-    
     TileIndex index;
     index.x = -1;
     index.y = -1;
@@ -37,9 +35,7 @@ Board* _board;
     self = [super init];
     
     _Card = nil;
-    
-    _board = [[GameModel Instance] Board];
-    
+
     _Index = Index;
     
     return self;
@@ -71,9 +67,16 @@ Board* _board;
             break;
     }
     
-    tile = [_board getTileAtIndex:lookup];
+    tile = [[self getBoard] getTileAtIndex:lookup];
     
     return tile;
 }
 
+- (Board*) getBoard
+{
+    if (_board == nil)
+        _board = [[GameModel Instance] Board];
+
+    return _board;
+}
 @end
