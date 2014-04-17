@@ -22,6 +22,8 @@
 
 - (id) initWithSize: (int) Size;
 
+- (int) getScore;
+
 - (NSMutableArray*) Update:(DIRECTION) Direction;
 
 @end
