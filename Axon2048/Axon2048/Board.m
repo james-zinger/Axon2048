@@ -160,6 +160,8 @@ int _Size;
 
 - (NSMutableArray*) UpdateUp
 {
+    NSMutableArray* changes = [[NSMutableArray alloc] init];
+ 
     // Row Forward
     // Col Forward
     for (int x = 0; x < _Size; x++)
@@ -167,8 +169,17 @@ int _Size;
         for (int y = 0; y < _Size; y++)
         {
             Tile* tile = _TileGrid[x][y];
+            if ([tile Card] == nil)
+            {
+                continue;
+            }
             
+            Tile* aboveTile = [tile getNeightbourInDirection: UP];
             
+            if ( [aboveTile Card] == nil)
+            {
+                
+            }
         }
     }
     
@@ -177,6 +188,8 @@ int _Size;
 
 - (NSMutableArray*) UpdateDown
 {
+    NSMutableArray* changes = [[NSMutableArray alloc] init];
+    
     // Row Backward
     // Col Forward
     for (int x = _Size - 1; x < 0; x--)
@@ -191,6 +204,8 @@ int _Size;
 
 - (NSMutableArray*) UpdateLeft
 {
+    NSMutableArray* changes = [[NSMutableArray alloc] init];
+    
     // Col Forward
     // Row Forward
     for (int y = 0; y < _Size; y++)
@@ -206,6 +221,8 @@ int _Size;
 
 - (NSMutableArray*) UpdateRight
 {
+    NSMutableArray* changes = [[NSMutableArray alloc] init];
+   
     //Col Backward
     //Row Forward
     for (int y = _Size - 1; y < 0; y--)
