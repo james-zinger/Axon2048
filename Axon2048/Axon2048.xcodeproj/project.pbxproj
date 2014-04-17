@@ -7,6 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E6E1D2318FF597000547F78 /* System Shock 2 OST - Engineering.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1CFA18FF597000547F78 /* System Shock 2 OST - Engineering.mp3 */; };
+		3E6E1D2418FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1CFB18FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 */; };
+		3E6E1D2518FF597000547F78 /* Menu-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1CFE18FF597000547F78 /* Menu-Button.png */; };
+		3E6E1D2618FF597000547F78 /* Restart-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1CFF18FF597000547F78 /* Restart-Button.png */; };
+		3E6E1D2718FF597000547F78 /* Save-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0018FF597000547F78 /* Save-Button.png */; };
+		3E6E1D2818FF597000547F78 /* Undo-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0118FF597000547F78 /* Undo-Button.png */; };
+		3E6E1D2918FF597000547F78 /* Gameplay-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0318FF597000547F78 /* Gameplay-Background.png */; };
+		3E6E1D2A18FF597000547F78 /* Tile-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0418FF597000547F78 /* Tile-1024.png */; };
+		3E6E1D2B18FF597000547F78 /* Tile-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0518FF597000547F78 /* Tile-128.png */; };
+		3E6E1D2C18FF597000547F78 /* Tile-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0618FF597000547F78 /* Tile-16.png */; };
+		3E6E1D2D18FF597000547F78 /* Tile-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0718FF597000547F78 /* Tile-2.png */; };
+		3E6E1D2E18FF597000547F78 /* Tile-2048.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0818FF597000547F78 /* Tile-2048.png */; };
+		3E6E1D2F18FF597000547F78 /* Tile-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0918FF597000547F78 /* Tile-256.png */; };
+		3E6E1D3018FF597000547F78 /* Tile-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0A18FF597000547F78 /* Tile-32.png */; };
+		3E6E1D3118FF597000547F78 /* Tile-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0B18FF597000547F78 /* Tile-4.png */; };
+		3E6E1D3218FF597000547F78 /* Tile-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0C18FF597000547F78 /* Tile-512.png */; };
+		3E6E1D3318FF597000547F78 /* Tile-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0D18FF597000547F78 /* Tile-64.png */; };
+		3E6E1D3418FF597000547F78 /* Tile-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D0E18FF597000547F78 /* Tile-8.png */; };
+		3E6E1D3518FF597000547F78 /* Instructions-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1018FF597000547F78 /* Instructions-Background.png */; };
+		3E6E1D3618FF597000547F78 /* Leaderboard-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1218FF597000547F78 /* Leaderboard-Background.png */; };
+		3E6E1D3718FF597000547F78 /* Lose-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1418FF597000547F78 /* Lose-Background.png */; };
+		3E6E1D3818FF597000547F78 /* Lose-Leaderboard-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1518FF597000547F78 /* Lose-Leaderboard-Button.png */; };
+		3E6E1D3918FF597000547F78 /* Lose-Main-Menu-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1618FF597000547F78 /* Lose-Main-Menu-Button.png */; };
+		3E6E1D3A18FF597000547F78 /* Lose-Retry-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1718FF597000547F78 /* Lose-Retry-Button.png */; };
+		3E6E1D3B18FF597000547F78 /* Title-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1918FF597000547F78 /* Title-Background.png */; };
+		3E6E1D3C18FF597000547F78 /* Title-Instructions-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1A18FF597000547F78 /* Title-Instructions-Button.png */; };
+		3E6E1D3D18FF597000547F78 /* Title-Play-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1B18FF597000547F78 /* Title-Play-Button.png */; };
+		3E6E1D3E18FF597000547F78 /* Title-Quit-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1C18FF597000547F78 /* Title-Quit-Button.png */; };
+		3E6E1D4018FF597000547F78 /* Win-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D1F18FF597000547F78 /* Win-Background.png */; };
+		3E6E1D4118FF597000547F78 /* Win-Leaderboard-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D2018FF597000547F78 /* Win-Leaderboard-Button.png */; };
+		3E6E1D4218FF597000547F78 /* Win-Main-Menu-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D2118FF597000547F78 /* Win-Main-Menu-Button.png */; };
+		3E6E1D4318FF597000547F78 /* Win-Retry-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D2218FF597000547F78 /* Win-Retry-Button.png */; };
+		3E6E1D4718FF622D00547F78 /* Credits-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D4518FF622D00547F78 /* Credits-Background.png */; };
+		3E6E1D4818FF622D00547F78 /* Credits-Main-Menu-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D4618FF622D00547F78 /* Credits-Main-Menu-Button.png */; };
+		3E6E1D4B18FF6ACF00547F78 /* Title-Credits-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D4918FF6ACF00547F78 /* Title-Credits-Button.png */; };
+		3E6E1D4C18FF6ACF00547F78 /* Title-Options-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D4A18FF6ACF00547F78 /* Title-Options-Button.png */; };
+		3E6E1D4E18FF6B8300547F78 /* Title-Leaderboard-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1D4D18FF6B8300547F78 /* Title-Leaderboard-Button.png */; };
+		3E752E8B18FF6F2100CE4767 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E752E8918FF6F2100CE4767 /* Ubuntu-B.ttf */; };
+		3E752E8C18FF6F2100CE4767 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E752E8A18FF6F2100CE4767 /* Ubuntu-R.ttf */; };
+		3E752E8E18FF70FA00CE4767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E752E8D18FF70FA00CE4767 /* Main.storyboard */; };
 		66D9E79418FF1F25000B74AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79318FF1F25000B74AC /* Foundation.framework */; };
 		66D9E79618FF1F25000B74AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79518FF1F25000B74AC /* CoreGraphics.framework */; };
 		66D9E79818FF1F25000B74AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79718FF1F25000B74AC /* UIKit.framework */; };
@@ -14,7 +54,6 @@
 		66D9E7A018FF1F25000B74AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E79E18FF1F25000B74AC /* InfoPlist.strings */; };
 		66D9E7A218FF1F25000B74AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7A118FF1F25000B74AC /* main.m */; };
 		66D9E7A618FF1F25000B74AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7A518FF1F25000B74AC /* AppDelegate.m */; };
-		66D9E7A918FF1F25000B74AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E7A718FF1F25000B74AC /* Main.storyboard */; };
 		66D9E7AC18FF1F25000B74AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7AB18FF1F25000B74AC /* ViewController.m */; };
 		66D9E7AF18FF1F25000B74AC /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7AE18FF1F25000B74AC /* MyScene.m */; };
 		66D9E7B318FF1F25000B74AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E7B218FF1F25000B74AC /* Images.xcassets */; };
@@ -40,6 +79,46 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E6E1CFA18FF597000547F78 /* System Shock 2 OST - Engineering.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "System Shock 2 OST - Engineering.mp3"; sourceTree = "<group>"; };
+		3E6E1CFB18FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "System Shock 2 OST - Ops 2.mp3"; sourceTree = "<group>"; };
+		3E6E1CFE18FF597000547F78 /* Menu-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-Button.png"; sourceTree = "<group>"; };
+		3E6E1CFF18FF597000547F78 /* Restart-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Restart-Button.png"; sourceTree = "<group>"; };
+		3E6E1D0018FF597000547F78 /* Save-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Save-Button.png"; sourceTree = "<group>"; };
+		3E6E1D0118FF597000547F78 /* Undo-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Undo-Button.png"; sourceTree = "<group>"; };
+		3E6E1D0318FF597000547F78 /* Gameplay-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gameplay-Background.png"; sourceTree = "<group>"; };
+		3E6E1D0418FF597000547F78 /* Tile-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-1024.png"; sourceTree = "<group>"; };
+		3E6E1D0518FF597000547F78 /* Tile-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-128.png"; sourceTree = "<group>"; };
+		3E6E1D0618FF597000547F78 /* Tile-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-16.png"; sourceTree = "<group>"; };
+		3E6E1D0718FF597000547F78 /* Tile-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-2.png"; sourceTree = "<group>"; };
+		3E6E1D0818FF597000547F78 /* Tile-2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-2048.png"; sourceTree = "<group>"; };
+		3E6E1D0918FF597000547F78 /* Tile-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-256.png"; sourceTree = "<group>"; };
+		3E6E1D0A18FF597000547F78 /* Tile-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-32.png"; sourceTree = "<group>"; };
+		3E6E1D0B18FF597000547F78 /* Tile-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-4.png"; sourceTree = "<group>"; };
+		3E6E1D0C18FF597000547F78 /* Tile-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-512.png"; sourceTree = "<group>"; };
+		3E6E1D0D18FF597000547F78 /* Tile-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-64.png"; sourceTree = "<group>"; };
+		3E6E1D0E18FF597000547F78 /* Tile-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile-8.png"; sourceTree = "<group>"; };
+		3E6E1D1018FF597000547F78 /* Instructions-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instructions-Background.png"; sourceTree = "<group>"; };
+		3E6E1D1218FF597000547F78 /* Leaderboard-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Leaderboard-Background.png"; sourceTree = "<group>"; };
+		3E6E1D1418FF597000547F78 /* Lose-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lose-Background.png"; sourceTree = "<group>"; };
+		3E6E1D1518FF597000547F78 /* Lose-Leaderboard-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lose-Leaderboard-Button.png"; sourceTree = "<group>"; };
+		3E6E1D1618FF597000547F78 /* Lose-Main-Menu-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lose-Main-Menu-Button.png"; sourceTree = "<group>"; };
+		3E6E1D1718FF597000547F78 /* Lose-Retry-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lose-Retry-Button.png"; sourceTree = "<group>"; };
+		3E6E1D1918FF597000547F78 /* Title-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Background.png"; sourceTree = "<group>"; };
+		3E6E1D1A18FF597000547F78 /* Title-Instructions-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Instructions-Button.png"; sourceTree = "<group>"; };
+		3E6E1D1B18FF597000547F78 /* Title-Play-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Play-Button.png"; sourceTree = "<group>"; };
+		3E6E1D1C18FF597000547F78 /* Title-Quit-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Quit-Button.png"; sourceTree = "<group>"; };
+		3E6E1D1F18FF597000547F78 /* Win-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Win-Background.png"; sourceTree = "<group>"; };
+		3E6E1D2018FF597000547F78 /* Win-Leaderboard-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Win-Leaderboard-Button.png"; sourceTree = "<group>"; };
+		3E6E1D2118FF597000547F78 /* Win-Main-Menu-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Win-Main-Menu-Button.png"; sourceTree = "<group>"; };
+		3E6E1D2218FF597000547F78 /* Win-Retry-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Win-Retry-Button.png"; sourceTree = "<group>"; };
+		3E6E1D4518FF622D00547F78 /* Credits-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credits-Background.png"; sourceTree = "<group>"; };
+		3E6E1D4618FF622D00547F78 /* Credits-Main-Menu-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credits-Main-Menu-Button.png"; sourceTree = "<group>"; };
+		3E6E1D4918FF6ACF00547F78 /* Title-Credits-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Credits-Button.png"; sourceTree = "<group>"; };
+		3E6E1D4A18FF6ACF00547F78 /* Title-Options-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Options-Button.png"; sourceTree = "<group>"; };
+		3E6E1D4D18FF6B8300547F78 /* Title-Leaderboard-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Title-Leaderboard-Button.png"; sourceTree = "<group>"; };
+		3E752E8918FF6F2100CE4767 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-B.ttf"; path = "Fonts/Ubuntu-B.ttf"; sourceTree = "<group>"; };
+		3E752E8A18FF6F2100CE4767 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-R.ttf"; path = "Fonts/Ubuntu-R.ttf"; sourceTree = "<group>"; };
+		3E752E8D18FF70FA00CE4767 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Axon2048/Main.storyboard; sourceTree = "<group>"; };
 		66D9E79018FF1F25000B74AC /* Axon2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Axon2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D9E79318FF1F25000B74AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66D9E79518FF1F25000B74AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,7 +130,6 @@
 		66D9E7A318FF1F25000B74AC /* Axon2048-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Axon2048-Prefix.pch"; sourceTree = "<group>"; };
 		66D9E7A418FF1F25000B74AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66D9E7A518FF1F25000B74AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		66D9E7A818FF1F25000B74AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66D9E7AA18FF1F25000B74AC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		66D9E7AB18FF1F25000B74AC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		66D9E7AD18FF1F25000B74AC /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
@@ -99,9 +177,134 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E6E1CF918FF597000547F78 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1CFA18FF597000547F78 /* System Shock 2 OST - Engineering.mp3 */,
+				3E6E1CFB18FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		3E6E1CFC18FF597000547F78 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1CFD18FF597000547F78 /* common */,
+				3E6E1D4418FF622D00547F78 /* credits */,
+				3E6E1D0218FF597000547F78 /* gameplay */,
+				3E6E1D0F18FF597000547F78 /* instructions */,
+				3E6E1D1118FF597000547F78 /* leaderboard */,
+				3E6E1D1318FF597000547F78 /* lose */,
+				3E6E1D1818FF597000547F78 /* title */,
+				3E6E1D1E18FF597000547F78 /* win */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		3E6E1CFD18FF597000547F78 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1CFE18FF597000547F78 /* Menu-Button.png */,
+				3E6E1CFF18FF597000547F78 /* Restart-Button.png */,
+				3E6E1D0018FF597000547F78 /* Save-Button.png */,
+				3E6E1D0118FF597000547F78 /* Undo-Button.png */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		3E6E1D0218FF597000547F78 /* gameplay */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1D0318FF597000547F78 /* Gameplay-Background.png */,
+				3E6E1D0418FF597000547F78 /* Tile-1024.png */,
+				3E6E1D0518FF597000547F78 /* Tile-128.png */,
+				3E6E1D0618FF597000547F78 /* Tile-16.png */,
+				3E6E1D0718FF597000547F78 /* Tile-2.png */,
+				3E6E1D0818FF597000547F78 /* Tile-2048.png */,
+				3E6E1D0918FF597000547F78 /* Tile-256.png */,
+				3E6E1D0A18FF597000547F78 /* Tile-32.png */,
+				3E6E1D0B18FF597000547F78 /* Tile-4.png */,
+				3E6E1D0C18FF597000547F78 /* Tile-512.png */,
+				3E6E1D0D18FF597000547F78 /* Tile-64.png */,
+				3E6E1D0E18FF597000547F78 /* Tile-8.png */,
+			);
+			path = gameplay;
+			sourceTree = "<group>";
+		};
+		3E6E1D0F18FF597000547F78 /* instructions */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1D1018FF597000547F78 /* Instructions-Background.png */,
+			);
+			path = instructions;
+			sourceTree = "<group>";
+		};
+		3E6E1D1118FF597000547F78 /* leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1D1218FF597000547F78 /* Leaderboard-Background.png */,
+			);
+			path = leaderboard;
+			sourceTree = "<group>";
+		};
+		3E6E1D1318FF597000547F78 /* lose */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1D1418FF597000547F78 /* Lose-Background.png */,
+				3E6E1D1518FF597000547F78 /* Lose-Leaderboard-Button.png */,
+				3E6E1D1618FF597000547F78 /* Lose-Main-Menu-Button.png */,
+				3E6E1D1718FF597000547F78 /* Lose-Retry-Button.png */,
+			);
+			path = lose;
+			sourceTree = "<group>";
+		};
+		3E6E1D1818FF597000547F78 /* title */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1D4D18FF6B8300547F78 /* Title-Leaderboard-Button.png */,
+				3E6E1D4918FF6ACF00547F78 /* Title-Credits-Button.png */,
+				3E6E1D4A18FF6ACF00547F78 /* Title-Options-Button.png */,
+				3E6E1D1918FF597000547F78 /* Title-Background.png */,
+				3E6E1D1A18FF597000547F78 /* Title-Instructions-Button.png */,
+				3E6E1D1B18FF597000547F78 /* Title-Play-Button.png */,
+				3E6E1D1C18FF597000547F78 /* Title-Quit-Button.png */,
+			);
+			path = title;
+			sourceTree = "<group>";
+		};
+		3E6E1D1E18FF597000547F78 /* win */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1D1F18FF597000547F78 /* Win-Background.png */,
+				3E6E1D2018FF597000547F78 /* Win-Leaderboard-Button.png */,
+				3E6E1D2118FF597000547F78 /* Win-Main-Menu-Button.png */,
+				3E6E1D2218FF597000547F78 /* Win-Retry-Button.png */,
+			);
+			path = win;
+			sourceTree = "<group>";
+		};
+		3E6E1D4418FF622D00547F78 /* credits */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E1D4518FF622D00547F78 /* Credits-Background.png */,
+				3E6E1D4618FF622D00547F78 /* Credits-Main-Menu-Button.png */,
+			);
+			path = credits;
+			sourceTree = "<group>";
+		};
+		3E752E8818FF6EC800CE4767 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3E752E8918FF6F2100CE4767 /* Ubuntu-B.ttf */,
+				3E752E8A18FF6F2100CE4767 /* Ubuntu-R.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		66D9E78718FF1F25000B74AC = {
 			isa = PBXGroup;
 			children = (
+				3E752E8D18FF70FA00CE4767 /* Main.storyboard */,
 				66D9E79B18FF1F25000B74AC /* Axon2048 */,
 				66D9E7BF18FF1F25000B74AC /* Axon2048Tests */,
 				66D9E79218FF1F25000B74AC /* Frameworks */,
@@ -133,11 +336,13 @@
 		66D9E79B18FF1F25000B74AC /* Axon2048 */ = {
 			isa = PBXGroup;
 			children = (
+				3E752E8818FF6EC800CE4767 /* Fonts */,
+				3E6E1CF918FF597000547F78 /* Sound */,
+				3E6E1CFC18FF597000547F78 /* Textures */,
 				66D9E7D318FF288F000B74AC /* Tileindex.h */,
 				66D9E7D218FF27A5000B74AC /* GameModel */,
 				66D9E7A418FF1F25000B74AC /* AppDelegate.h */,
 				66D9E7A518FF1F25000B74AC /* AppDelegate.m */,
-				66D9E7A718FF1F25000B74AC /* Main.storyboard */,
 				66D9E7AA18FF1F25000B74AC /* ViewController.h */,
 				66D9E7AB18FF1F25000B74AC /* ViewController.m */,
 				66D9E7AD18FF1F25000B74AC /* MyScene.h */,
@@ -269,9 +474,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6E1D2818FF597000547F78 /* Undo-Button.png in Resources */,
+				3E6E1D3518FF597000547F78 /* Instructions-Background.png in Resources */,
+				3E6E1D2B18FF597000547F78 /* Tile-128.png in Resources */,
+				3E6E1D2D18FF597000547F78 /* Tile-2.png in Resources */,
+				3E6E1D4218FF597000547F78 /* Win-Main-Menu-Button.png in Resources */,
 				66D9E7A018FF1F25000B74AC /* InfoPlist.strings in Resources */,
+				3E6E1D2418FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 in Resources */,
+				3E6E1D2718FF597000547F78 /* Save-Button.png in Resources */,
+				3E752E8B18FF6F2100CE4767 /* Ubuntu-B.ttf in Resources */,
 				66D9E7B318FF1F25000B74AC /* Images.xcassets in Resources */,
-				66D9E7A918FF1F25000B74AC /* Main.storyboard in Resources */,
+				3E6E1D3018FF597000547F78 /* Tile-32.png in Resources */,
+				3E6E1D3718FF597000547F78 /* Lose-Background.png in Resources */,
+				3E6E1D2F18FF597000547F78 /* Tile-256.png in Resources */,
+				3E6E1D4718FF622D00547F78 /* Credits-Background.png in Resources */,
+				3E6E1D4B18FF6ACF00547F78 /* Title-Credits-Button.png in Resources */,
+				3E6E1D2A18FF597000547F78 /* Tile-1024.png in Resources */,
+				3E6E1D4018FF597000547F78 /* Win-Background.png in Resources */,
+				3E6E1D2618FF597000547F78 /* Restart-Button.png in Resources */,
+				3E6E1D3E18FF597000547F78 /* Title-Quit-Button.png in Resources */,
+				3E6E1D4118FF597000547F78 /* Win-Leaderboard-Button.png in Resources */,
+				3E6E1D3118FF597000547F78 /* Tile-4.png in Resources */,
+				3E752E8E18FF70FA00CE4767 /* Main.storyboard in Resources */,
+				3E6E1D3D18FF597000547F78 /* Title-Play-Button.png in Resources */,
+				3E6E1D2C18FF597000547F78 /* Tile-16.png in Resources */,
+				3E6E1D3218FF597000547F78 /* Tile-512.png in Resources */,
+				3E6E1D4318FF597000547F78 /* Win-Retry-Button.png in Resources */,
+				3E6E1D3B18FF597000547F78 /* Title-Background.png in Resources */,
+				3E6E1D3918FF597000547F78 /* Lose-Main-Menu-Button.png in Resources */,
+				3E6E1D2918FF597000547F78 /* Gameplay-Background.png in Resources */,
+				3E6E1D2518FF597000547F78 /* Menu-Button.png in Resources */,
+				3E752E8C18FF6F2100CE4767 /* Ubuntu-R.ttf in Resources */,
+				3E6E1D3618FF597000547F78 /* Leaderboard-Background.png in Resources */,
+				3E6E1D3818FF597000547F78 /* Lose-Leaderboard-Button.png in Resources */,
+				3E6E1D4818FF622D00547F78 /* Credits-Main-Menu-Button.png in Resources */,
+				3E6E1D3C18FF597000547F78 /* Title-Instructions-Button.png in Resources */,
+				3E6E1D4C18FF6ACF00547F78 /* Title-Options-Button.png in Resources */,
+				3E6E1D3A18FF597000547F78 /* Lose-Retry-Button.png in Resources */,
+				3E6E1D3418FF597000547F78 /* Tile-8.png in Resources */,
+				3E6E1D4E18FF6B8300547F78 /* Title-Leaderboard-Button.png in Resources */,
+				3E6E1D2318FF597000547F78 /* System Shock 2 OST - Engineering.mp3 in Resources */,
+				3E6E1D2E18FF597000547F78 /* Tile-2048.png in Resources */,
+				3E6E1D3318FF597000547F78 /* Tile-64.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,14 +570,6 @@
 				66D9E79F18FF1F25000B74AC /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		66D9E7A718FF1F25000B74AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				66D9E7A818FF1F25000B74AC /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		66D9E7C218FF1F25000B74AC /* InfoPlist.strings */ = {
@@ -510,6 +746,7 @@
 				66D9E7CB18FF1F25000B74AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66D9E7CC18FF1F25000B74AC /* Build configuration list for PBXNativeTarget "Axon2048Tests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +755,7 @@
 				66D9E7CE18FF1F25000B74AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
