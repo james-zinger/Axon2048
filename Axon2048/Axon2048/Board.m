@@ -7,6 +7,7 @@
 //
 
 #import "Board.h"
+#import "Cardaction.h"
 
 @implementation Board
 
@@ -174,16 +175,53 @@ int _Size;
                 continue;
             }
             
-            Tile* aboveTile = [tile getNeightbourInDirection: UP];
+            Tile* tileContext = [tile getNeightbourInDirection: UP];
+            Card* card = [tile Card];
             
-            if ( [aboveTile Card] == nil)
+            Card* targetCard = [tileContext Card];
+            
+            // Move up one index
+            if ( targetCard == nil)
             {
+                
+                card.Tile = tileContext;
+                tile.Card = nil;
+
+                CardAction* action  = [[CardAction alloc] init];
+                action.lookupIndex  = tile.Index;
+                action.shouldDelete = NO;
+                action.newValue     = card.Value;
+                action.newIndex     = tileContext.Index;
+                [changes addObject:action];
+            }
+            
+            else if ([targetCard Value] == [card Value])
+            {
+                
+                [targetCard doubleValue];
+                
+                CardAction* action1  = [[CardAction alloc] init];
+                action1.lookupIndex  = tile.Index;
+                action1.newIndex     = tileContext.Index;
+                action1.newValue     = card.Value;
+                action1.shouldDelete = YES;
+                [changes addObject:action1];
+                
+                tile.Card = nil;
+                [_Cards removeObject:card];
+                
+                CardAction* action2  = [[CardAction alloc]init];
+                action2.lookupIndex  = tileContext.Index;
+                action2.newIndex     = tileContext.Index;
+                action2.newValue     = targetCard.Value;
+                action2.shouldDelete = NO;
+                [changes addObject:action2];
                 
             }
         }
     }
     
-    return nil;
+    return changes;
 }
 
 - (NSMutableArray*) UpdateDown
@@ -197,9 +235,57 @@ int _Size;
         for (int y = 0; y < _Size; y++)
         {
             Tile* tile = _TileGrid[x][y];
+            if ([tile Card] == nil)
+            {
+                continue;
+            }
+            
+            Tile* tileContext = [tile getNeightbourInDirection: DOWN];
+            Card* card = [tile Card];
+            
+            Card* targetCard = [tileContext Card];
+            
+            // Move up one index
+            if ( targetCard == nil)
+            {
+                
+                card.Tile = tileContext;
+                tile.Card = nil;
+                
+                CardAction* action  = [[CardAction alloc] init];
+                action.lookupIndex  = tile.Index;
+                action.shouldDelete = NO;
+                action.newValue     = card.Value;
+                action.newIndex     = tileContext.Index;
+                [changes addObject:action];
+            }
+            
+            else if ([targetCard Value] == [card Value])
+            {
+                
+                [targetCard doubleValue];
+                
+                CardAction* action1  = [[CardAction alloc] init];
+                action1.lookupIndex  = tile.Index;
+                action1.newIndex     = tileContext.Index;
+                action1.newValue     = card.Value;
+                action1.shouldDelete = YES;
+                [changes addObject:action1];
+                
+                tile.Card = nil;
+                [_Cards removeObject:card];
+                
+                CardAction* action2  = [[CardAction alloc]init];
+                action2.lookupIndex  = tileContext.Index;
+                action2.newIndex     = tileContext.Index;
+                action2.newValue     = targetCard.Value;
+                action2.shouldDelete = NO;
+                [changes addObject:action2];
+                
+            }
         }
     }
-    return nil;
+    return changes;
 }
 
 - (NSMutableArray*) UpdateLeft
@@ -213,10 +299,57 @@ int _Size;
         for (int x = 0; x < _Size; x++)
         {
             Tile* tile = _TileGrid[x][y];
-        }
+            if ([tile Card] == nil)
+            {
+                continue;
+            }
+            
+            Tile* tileContext = [tile getNeightbourInDirection: LEFT];
+            Card* card = [tile Card];
+            
+            Card* targetCard = [tileContext Card];
+            
+            // Move up one index
+            if ( targetCard == nil)
+            {
+                
+                card.Tile = tileContext;
+                tile.Card = nil;
+                
+                CardAction* action  = [[CardAction alloc] init];
+                action.lookupIndex  = tile.Index;
+                action.shouldDelete = NO;
+                action.newValue     = card.Value;
+                action.newIndex     = tileContext.Index;
+                [changes addObject:action];
+            }
+            
+            else if ([targetCard Value] == [card Value])
+            {
+                
+                [targetCard doubleValue];
+                
+                CardAction* action1  = [[CardAction alloc] init];
+                action1.lookupIndex  = tile.Index;
+                action1.newIndex     = tileContext.Index;
+                action1.newValue     = card.Value;
+                action1.shouldDelete = YES;
+                [changes addObject:action1];
+                
+                tile.Card = nil;
+                [_Cards removeObject:card];
+                
+                CardAction* action2  = [[CardAction alloc]init];
+                action2.lookupIndex  = tileContext.Index;
+                action2.newIndex     = tileContext.Index;
+                action2.newValue     = targetCard.Value;
+                action2.shouldDelete = NO;
+                [changes addObject:action2];
+                
+            }        }
     }
     
-    return nil;
+    return changes;
 }
 
 - (NSMutableArray*) UpdateRight
@@ -230,9 +363,57 @@ int _Size;
         for (int x = 0; x < _Size; x++)
         {
             Tile* tile = _TileGrid[x][y];
+            if ([tile Card] == nil)
+            {
+                continue;
+            }
+            
+            Tile* tileContext = [tile getNeightbourInDirection: RIGHT];
+            Card* card = [tile Card];
+            
+            Card* targetCard = [tileContext Card];
+            
+            // Move up one index
+            if ( targetCard == nil)
+            {
+                
+                card.Tile = tileContext;
+                tile.Card = nil;
+                
+                CardAction* action  = [[CardAction alloc] init];
+                action.lookupIndex  = tile.Index;
+                action.shouldDelete = NO;
+                action.newValue     = card.Value;
+                action.newIndex     = tileContext.Index;
+                [changes addObject:action];
+            }
+            
+            else if ([targetCard Value] == [card Value])
+            {
+                
+                [targetCard doubleValue];
+                
+                CardAction* action1  = [[CardAction alloc] init];
+                action1.lookupIndex  = tile.Index;
+                action1.newIndex     = tileContext.Index;
+                action1.newValue     = card.Value;
+                action1.shouldDelete = YES;
+                [changes addObject:action1];
+                
+                tile.Card = nil;
+                [_Cards removeObject:card];
+                
+                CardAction* action2  = [[CardAction alloc]init];
+                action2.lookupIndex  = tileContext.Index;
+                action2.newIndex     = tileContext.Index;
+                action2.newValue     = targetCard.Value;
+                action2.shouldDelete = NO;
+                [changes addObject:action2];
+                
+            }
         }
     }
-    return nil;
+    return changes;
 }
 
 @end
