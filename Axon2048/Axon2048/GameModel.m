@@ -27,14 +27,24 @@
 }
 
 // Adds a random tile
-- (TileIndex) addRandomCard
+- (TileIndex) AddRandomCard
 {
     return [_Board addCardAtRandomIndex];
 }
 
-- (int) getScore
+- (int) GetScore
 {
-    return [_Board getScore];
+    return [_Board Score];
+}
+
+- (BOOL) CheckLoseCondition
+{
+    return [_Board isBoardFull];
+}
+
+- (BOOL) CheckWinCondition
+{
+    return [_Board checkForValue:2048];
 }
 
 // Singleton instance variable
