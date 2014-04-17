@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E527E5719005E9000DF902F /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E527E5619005E9000DF902F /* TitleViewController.m */; };
+		3E527E5E19005EF600DF902F /* GameplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E527E5D19005EF600DF902F /* GameplayViewController.m */; };
+		3E527E6119005F1700DF902F /* LeaderboardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E527E6019005F1700DF902F /* LeaderboardTableViewController.m */; };
 		3E6E1D2318FF597000547F78 /* System Shock 2 OST - Engineering.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1CFA18FF597000547F78 /* System Shock 2 OST - Engineering.mp3 */; };
 		3E6E1D2418FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1CFB18FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 */; };
 		3E6E1D2518FF597000547F78 /* Menu-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1CFE18FF597000547F78 /* Menu-Button.png */; };
@@ -55,7 +58,6 @@
 		66D9E7A018FF1F25000B74AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E79E18FF1F25000B74AC /* InfoPlist.strings */; };
 		66D9E7A218FF1F25000B74AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7A118FF1F25000B74AC /* main.m */; };
 		66D9E7A618FF1F25000B74AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7A518FF1F25000B74AC /* AppDelegate.m */; };
-		66D9E7AC18FF1F25000B74AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7AB18FF1F25000B74AC /* ViewController.m */; };
 		66D9E7AF18FF1F25000B74AC /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7AE18FF1F25000B74AC /* MyScene.m */; };
 		66D9E7B318FF1F25000B74AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E7B218FF1F25000B74AC /* Images.xcassets */; };
 		66D9E7BA18FF1F25000B74AC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E7B918FF1F25000B74AC /* XCTest.framework */; };
@@ -80,6 +82,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E527E5519005E9000DF902F /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
+		3E527E5619005E9000DF902F /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
+		3E527E5C19005EF600DF902F /* GameplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayViewController.h; sourceTree = "<group>"; };
+		3E527E5D19005EF600DF902F /* GameplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayViewController.m; sourceTree = "<group>"; };
+		3E527E5F19005F1700DF902F /* LeaderboardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardTableViewController.h; sourceTree = "<group>"; };
+		3E527E6019005F1700DF902F /* LeaderboardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardTableViewController.m; sourceTree = "<group>"; };
 		3E6E1CFA18FF597000547F78 /* System Shock 2 OST - Engineering.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "System Shock 2 OST - Engineering.mp3"; sourceTree = "<group>"; };
 		3E6E1CFB18FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "System Shock 2 OST - Ops 2.mp3"; sourceTree = "<group>"; };
 		3E6E1CFE18FF597000547F78 /* Menu-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-Button.png"; sourceTree = "<group>"; };
@@ -133,8 +141,6 @@
 		66D9E7A318FF1F25000B74AC /* Axon2048-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Axon2048-Prefix.pch"; sourceTree = "<group>"; };
 		66D9E7A418FF1F25000B74AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66D9E7A518FF1F25000B74AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		66D9E7AA18FF1F25000B74AC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		66D9E7AB18FF1F25000B74AC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		66D9E7AD18FF1F25000B74AC /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		66D9E7AE18FF1F25000B74AC /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
 		66D9E7B218FF1F25000B74AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -180,6 +186,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E527E5419005E2900DF902F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E527E5519005E9000DF902F /* TitleViewController.h */,
+				3E527E5619005E9000DF902F /* TitleViewController.m */,
+				3E527E5C19005EF600DF902F /* GameplayViewController.h */,
+				3E527E5D19005EF600DF902F /* GameplayViewController.m */,
+				3E527E5F19005F1700DF902F /* LeaderboardTableViewController.h */,
+				3E527E6019005F1700DF902F /* LeaderboardTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3E527E621900607F00DF902F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3E81702718FF7956006CFCC8 /* Fonts */,
+				3E6E1CF918FF597000547F78 /* Sound */,
+				3E6E1CFC18FF597000547F78 /* Textures */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		3E6E1CF918FF597000547F78 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,17 +368,14 @@
 		66D9E79B18FF1F25000B74AC /* Axon2048 */ = {
 			isa = PBXGroup;
 			children = (
-				3E81702718FF7956006CFCC8 /* Fonts */,
+				3E527E621900607F00DF902F /* Resources */,
+				3E527E5419005E2900DF902F /* ViewControllers */,
 				3EAE3E2518FF73D0000992D5 /* CardAction.h */,
 				3EAE3E2618FF73D0000992D5 /* Cardaction.m */,
-				3E6E1CF918FF597000547F78 /* Sound */,
-				3E6E1CFC18FF597000547F78 /* Textures */,
 				66D9E7D318FF288F000B74AC /* Tileindex.h */,
 				66D9E7D218FF27A5000B74AC /* GameModel */,
 				66D9E7A418FF1F25000B74AC /* AppDelegate.h */,
 				66D9E7A518FF1F25000B74AC /* AppDelegate.m */,
-				66D9E7AA18FF1F25000B74AC /* ViewController.h */,
-				66D9E7AB18FF1F25000B74AC /* ViewController.m */,
 				66D9E7AD18FF1F25000B74AC /* MyScene.h */,
 				66D9E7AE18FF1F25000B74AC /* MyScene.m */,
 				66D9E7B218FF1F25000B74AC /* Images.xcassets */,
@@ -541,12 +567,14 @@
 			files = (
 				66D9E7D818FF2AF1000B74AC /* Board.m in Sources */,
 				66D9E7AF18FF1F25000B74AC /* MyScene.m in Sources */,
-				66D9E7AC18FF1F25000B74AC /* ViewController.m in Sources */,
 				66D9E7E118FF36C2000B74AC /* Card.m in Sources */,
 				3EAE3E2718FF73D0000992D5 /* Cardaction.m in Sources */,
 				66D9E7D118FF2267000B74AC /* GameModel.m in Sources */,
 				66D9E7A618FF1F25000B74AC /* AppDelegate.m in Sources */,
+				3E527E5E19005EF600DF902F /* GameplayViewController.m in Sources */,
+				3E527E5719005E9000DF902F /* TitleViewController.m in Sources */,
 				66D9E7DE18FF30C8000B74AC /* Tile.m in Sources */,
+				3E527E6119005F1700DF902F /* LeaderboardTableViewController.m in Sources */,
 				66D9E7A218FF1F25000B74AC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
