@@ -21,16 +21,9 @@
 - (NSMutableArray*) UpdateWithDirection: (DIRECTION) Direction;
 
 // Attempts to add a random tile to the board
-- (TileIndex) AddRandomCard;
+- (TileIndex) addRandomCard;
 
-// Gets the current score of the player
-- (int) GetScore;
-
-// Check if the player has lost
-- (BOOL) CheckLoseCondition;
-
-// Check if the player has won
-- (BOOL) CheckWinCondition;
+- (int) getScore;
 
 // The singleton access to the game model
 + (GameModel*) Instance;

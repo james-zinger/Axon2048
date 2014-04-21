@@ -14,8 +14,6 @@
 
 @interface Board : NSObject
 
-@property (readonly) int Score;
-
 - (Tile*) getTileAtIndex:(TileIndex)Index;
 
 - (BOOL) addCardAtIndex:(TileIndex)Index;
@@ -24,9 +22,7 @@
 
 - (id) initWithSize: (int) Size;
 
-- (BOOL) isBoardFull;
-
-- (BOOL) checkForValue: (int) Value;
+- (int) getScore;
 
 - (NSMutableArray*) Update:(DIRECTION) Direction;
 

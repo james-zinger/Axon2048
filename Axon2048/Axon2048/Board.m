@@ -19,8 +19,6 @@ int _Size;
 {
     self = [super init];
     
-    _Score = 0;
-    
     _Size = Size;
     
     _TileGrid = [[NSMutableArray alloc] initWithCapacity: Size];
@@ -86,19 +84,6 @@ int _Size;
     return tile.Index;
 }
 
-- (BOOL) checkForValue:(int)Value
-{
-    for (int i = 0; i < _Cards.count; i++)
-    {
-        Card* card = _Cards[i];
-        
-        if (card.Value == Value)
-            return  true;
-    }
-    
-    return false;
-}
-
 - (NSMutableArray*) Update:(DIRECTION)Direction
 {
     NSMutableArray* array;
@@ -124,6 +109,16 @@ int _Size;
     return array;
 }
 
+-(int) getScore
+{
+    int sum = 0;
+    for (Card* c in _Cards)
+    {
+        sum += c.Value;
+    }
+    return sum;
+}
+
 -(Tile *)getTileAtIndex:(TileIndex)Index
 {
     Tile* tile = nil;
@@ -134,11 +129,6 @@ int _Size;
     }
     
     return _TileGrid[Index.x][Index.y];
-}
-
-- (BOOL) isBoardFull
-{
-    return ([_Cards count] == _Size*_Size);
 }
 
 // Private functions
@@ -168,11 +158,9 @@ int _Size;
     return tileArray;
 }
 
-// Adds the two card values to the score sum
-- (void) MergeCard: (Card*) Card1 WithCard: (Card*) Card2
+- (BOOL) checkIfBoardIsFull
 {
-    _Score += Card1.Value;
-    _Score += Card2.Value;
+    return ([_Cards count] == _Size*_Size);
 }
 
 // Update
@@ -181,7 +169,6 @@ int _Size;
 // Row - X
 // Col - Y
 
-// Updates the gamestate based on an upward flick
 - (NSMutableArray*) UpdateUp
 {
     NSMutableArray* changes = [[NSMutableArray alloc] init];
@@ -194,21 +181,59 @@ int _Size;
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
+            {
                 continue;
-            
+            }
             
             Tile* tileContext = [tile getNeightbourInDirection: UP];
-            if (tileContext == nil)
-                continue;
+            Card* card = [tile Card];
             
-            [self ResolveTile:tile WithTile:tileContext ActionCollection:changes];
+            Card* targetCard = [tileContext Card];
+            
+            // Move up one index
+            if ( targetCard == nil)
+            {
+                
+                card.Tile = tileContext;
+                tile.Card = nil;
+
+                CardAction* action  = [[CardAction alloc] init];
+                action.lookupIndex  = tile.Index;
+                action.shouldDelete = NO;
+                action.newValue     = card.Value;
+                action.newIndex     = tileContext.Index;
+                [changes addObject:action];
+            }
+            
+            else if ([targetCard Value] == [card Value])
+            {
+                
+                [targetCard doubleValue];
+                
+                CardAction* action1  = [[CardAction alloc] init];
+                action1.lookupIndex  = tile.Index;
+                action1.newIndex     = tileContext.Index;
+                action1.newValue     = card.Value;
+                action1.shouldDelete = YES;
+                [changes addObject:action1];
+                
+                tile.Card = nil;
+                [_Cards removeObject:card];
+                
+                CardAction* action2  = [[CardAction alloc]init];
+                action2.lookupIndex  = tileContext.Index;
+                action2.newIndex     = tileContext.Index;
+                action2.newValue     = targetCard.Value;
+                action2.shouldDelete = NO;
+                [changes addObject:action2];
+                
+            }
         }
     }
     
     return changes;
 }
 
-// Updates the gamestate based on an upward flick
 - (NSMutableArray*) UpdateDown
 {
     NSMutableArray* changes = [[NSMutableArray alloc] init];
@@ -221,21 +246,58 @@ int _Size;
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
+            {
                 continue;
-            
+            }
             
             Tile* tileContext = [tile getNeightbourInDirection: DOWN];
-            if (tileContext == nil)
-                continue;
+            Card* card = [tile Card];
             
-            [self ResolveTile:tile WithTile:tileContext ActionCollection:changes];
+            Card* targetCard = [tileContext Card];
+            
+            // Move up one index
+            if ( targetCard == nil)
+            {
+                
+                card.Tile = tileContext;
+                tile.Card = nil;
+                
+                CardAction* action  = [[CardAction alloc] init];
+                action.lookupIndex  = tile.Index;
+                action.shouldDelete = NO;
+                action.newValue     = card.Value;
+                action.newIndex     = tileContext.Index;
+                [changes addObject:action];
+            }
+            
+            else if ([targetCard Value] == [card Value])
+            {
+                
+                [targetCard doubleValue];
+                
+                CardAction* action1  = [[CardAction alloc] init];
+                action1.lookupIndex  = tile.Index;
+                action1.newIndex     = tileContext.Index;
+                action1.newValue     = card.Value;
+                action1.shouldDelete = YES;
+                [changes addObject:action1];
+                
+                tile.Card = nil;
+                [_Cards removeObject:card];
+                
+                CardAction* action2  = [[CardAction alloc]init];
+                action2.lookupIndex  = tileContext.Index;
+                action2.newIndex     = tileContext.Index;
+                action2.newValue     = targetCard.Value;
+                action2.shouldDelete = NO;
+                [changes addObject:action2];
+                
+            }
         }
     }
-    
     return changes;
 }
 
-// Updates the game state based on a left ward swipe
 - (NSMutableArray*) UpdateLeft
 {
     NSMutableArray* changes = [[NSMutableArray alloc] init];
@@ -248,20 +310,58 @@ int _Size;
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
+            {
                 continue;
+            }
             
             Tile* tileContext = [tile getNeightbourInDirection: LEFT];
-            if(tileContext == nil)
-                continue;
+            Card* card = [tile Card];
             
-            [self ResolveTile:tile WithTile:tileContext ActionCollection:changes];
-        }
+            Card* targetCard = [tileContext Card];
+            
+            // Move up one index
+            if ( targetCard == nil)
+            {
+                
+                card.Tile = tileContext;
+                tile.Card = nil;
+                
+                CardAction* action  = [[CardAction alloc] init];
+                action.lookupIndex  = tile.Index;
+                action.shouldDelete = NO;
+                action.newValue     = card.Value;
+                action.newIndex     = tileContext.Index;
+                [changes addObject:action];
+            }
+            
+            else if ([targetCard Value] == [card Value])
+            {
+                
+                [targetCard doubleValue];
+                
+                CardAction* action1  = [[CardAction alloc] init];
+                action1.lookupIndex  = tile.Index;
+                action1.newIndex     = tileContext.Index;
+                action1.newValue     = card.Value;
+                action1.shouldDelete = YES;
+                [changes addObject:action1];
+                
+                tile.Card = nil;
+                [_Cards removeObject:card];
+                
+                CardAction* action2  = [[CardAction alloc]init];
+                action2.lookupIndex  = tileContext.Index;
+                action2.newIndex     = tileContext.Index;
+                action2.newValue     = targetCard.Value;
+                action2.shouldDelete = NO;
+                [changes addObject:action2];
+                
+            }        }
     }
     
     return changes;
 }
 
-// Updates the gamestate based on a rightward flick
 - (NSMutableArray*) UpdateRight
 {
     NSMutableArray* changes = [[NSMutableArray alloc] init];
@@ -274,66 +374,56 @@ int _Size;
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
+            {
                 continue;
+            }
             
             Tile* tileContext = [tile getNeightbourInDirection: RIGHT];
-            if (tileContext == nil)
-                continue;
+            Card* card = [tile Card];
             
-            [self ResolveTile:tile WithTile:tileContext ActionCollection:changes];
+            Card* targetCard = [tileContext Card];
             
+            // Move up one index
+            if ( targetCard == nil)
+            {
+                
+                card.Tile = tileContext;
+                tile.Card = nil;
+                
+                CardAction* action  = [[CardAction alloc] init];
+                action.lookupIndex  = tile.Index;
+                action.shouldDelete = NO;
+                action.newValue     = card.Value;
+                action.newIndex     = tileContext.Index;
+                [changes addObject:action];
+            }
+            
+            else if ([targetCard Value] == [card Value])
+            {
+                
+                [targetCard doubleValue];
+                
+                CardAction* action1  = [[CardAction alloc] init];
+                action1.lookupIndex  = tile.Index;
+                action1.newIndex     = tileContext.Index;
+                action1.newValue     = card.Value;
+                action1.shouldDelete = YES;
+                [changes addObject:action1];
+                
+                tile.Card = nil;
+                [_Cards removeObject:card];
+                
+                CardAction* action2  = [[CardAction alloc]init];
+                action2.lookupIndex  = tileContext.Index;
+                action2.newIndex     = tileContext.Index;
+                action2.newValue     = targetCard.Value;
+                action2.shouldDelete = NO;
+                [changes addObject:action2];
+                
+            }
         }
     }
-    
     return changes;
-}
-
-- (void) ResolveTile: (Tile*) tile1 WithTile: (Tile*) tile2 ActionCollection: (NSMutableArray*) changes
-{
-    Card* card = [tile1 Card];
-    Card* targetCard = [tile2 Card];
-    
-    // Move up one index
-    if ( targetCard == nil)
-    {
-        
-        card.Tile = tile2;
-        tile1.Card = nil;
-        
-        CardAction* action  = [[CardAction alloc] init];
-        action.lookupIndex  = tile1.Index;
-        action.shouldDelete = NO;
-        action.newValue     = card.Value;
-        action.newIndex     = tile2.Index;
-        [changes addObject:action];
-
-    }
-    
-    // Merge the two cards
-    else if ([targetCard Value] == [card Value])
-    {
-        [self MergeCard:card WithCard:targetCard];
-        
-        [targetCard doubleValue];
-        
-        CardAction* action1  = [[CardAction alloc] init];
-        action1.lookupIndex  = tile1.Index;
-        action1.newIndex     = tile2.Index;
-        action1.newValue     = card.Value;
-        action1.shouldDelete = YES;
-        [changes addObject:action1];
-        
-        tile1.Card = nil;
-        [_Cards removeObject:card];
-        
-        CardAction* action2  = [[CardAction alloc]init];
-        action2.lookupIndex  = tile2.Index;
-        action2.newIndex     = tile2.Index;
-        action2.newValue     = targetCard.Value;
-        action2.shouldDelete = NO;
-        [changes addObject:action2];
-        
-    }
 }
 
 @end
