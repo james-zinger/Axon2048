@@ -25,6 +25,8 @@
 
 - (int) getScore;
 
+- (NSMutableArray*) getLeaderboard;
+
 // The singleton access to the game model
 + (GameModel*) Instance;
 
