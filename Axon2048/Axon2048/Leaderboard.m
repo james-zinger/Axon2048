@@ -15,14 +15,11 @@ NSMutableArray* _leaderboard;
 - (id) init
 {
     self = [super init];
-    
-    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO selector:@selector(localizedCompare:)];
-	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-	NSData* data = [prefs dataForKey:@"Leaderboards"];
-	_leaderboard = (NSMutableArray*) data;
-	_leaderboard =
-	
-    return self;
+
+     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+	_leaderboard = [prefs objectForKey:@"Leaderboard"];
+	[self sortLeaderboard];
+	return self;
 }
 
 - (NSMutableArray*) getLeaderboard
@@ -32,7 +29,22 @@ NSMutableArray* _leaderboard;
 
 - (void) addEntry:(int)score
 {
-        [_leaderboard addObject:[NSNumber numberWithInt:score]];
+    [_leaderboard addObject:[NSNumber numberWithInt:score]];
+    [self sortLeaderboard];
+}
+
+- (void) saveLeaderboard
+{
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:_leaderboard forKey:@"Leaderboard"];
+    [prefs synchronize];
+}
+
+//Private functions
+- (void) sortLeaderboard
+{
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO selector:@selector(localizedCompare:)];
+    [_leaderboard sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 }
                                         
 @end

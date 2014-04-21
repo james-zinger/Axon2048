@@ -14,4 +14,6 @@
 
 - (void) addEntry: (int) score;
 
+- (void) saveLeaderboard;
+
 @end

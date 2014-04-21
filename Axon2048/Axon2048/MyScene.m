@@ -49,6 +49,7 @@ int currentScore;
         
         
     }
+
     return self;
 }
 

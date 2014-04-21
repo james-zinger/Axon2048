@@ -8,6 +8,7 @@
 
 #import "GameModel.h"
 #import "Leaderboard.h"
+
 @implementation GameModel
 
 Leaderboard* _leaderboard;
@@ -16,7 +17,7 @@ Leaderboard* _leaderboard;
 {
     self = [super init];
     
-    _Board = [[Board alloc] initWithSize:4];
+    _Board = nil;
     
     _leaderboard = [[Leaderboard alloc] init];
     
@@ -32,18 +33,43 @@ Leaderboard* _leaderboard;
 // Adds a random tile
 - (TileIndex) addRandomCard
 {
+    if ([self isBoardInitalized])
+        [NSException raise:@"Board is not initalized" format:@"Value of board is nil"];
+    
     return [_Board addCardAtRandomIndex];
 }
 
 - (int) getScore
 {
+    if ([self isBoardInitalized])
+        [NSException raise:@"Board is not initalized" format:@"Value of board is nil"];
+
     return [_Board getScore];
 }
 
 - (NSMutableArray*) getLeaderboard
 {
+    return [_leaderboard getLeaderboard];
+}
+
+- (void) applicationClosing
+{
+    [_leaderboard saveLeaderboard];
+}
+
+- (void) startWithSize:(int)Size
+{
+    if ([self isBoardInitalized])
+        _Board = nil;
     
-    return nil;
+    _Board = [[Board alloc] initWithGridSize:Size];
+}
+
+// Pirvate functions
+
+- (BOOL) isBoardInitalized
+{
+    return (_Board != nil);
 }
 
 // Singleton instance variable

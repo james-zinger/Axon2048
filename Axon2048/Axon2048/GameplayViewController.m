@@ -27,8 +27,7 @@ SKSpriteNode* background;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
-    
+
     // Configure the view
     skView = [[SKView alloc] initWithFrame: _gameplayView.bounds];
     [_gameplayView addSubview: skView];
@@ -38,11 +37,9 @@ SKSpriteNode* background;
     // Create and configure the scene
     MyScene* scene = [MyScene sceneWithSize: skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    [scene controller: self];
-    [scene controller: self];
+
+    scene.controller = self;
     [skView presentScene: scene];
-=======
->>>>>>> 0b7369900d1379ef1509358de94192d70cc1fa69
     
     // Create a background image for the scene
     background = [SKSpriteNode spriteNodeWithImageNamed: @"Gameplay-Background-SKView.png"];

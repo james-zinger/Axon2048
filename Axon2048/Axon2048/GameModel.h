@@ -23,9 +23,16 @@
 // Attempts to add a random tile to the board
 - (TileIndex) addRandomCard;
 
+// Gets the score of the current game
 - (int) getScore;
 
+// Gets te array of ints for the leader board
 - (NSMutableArray*) getLeaderboard;
+
+// Signal the game model to close
+- (void) applicationClosing;
+
+- (void) startWithSize: (int) Size;
 
 // The singleton access to the game model
 + (GameModel*) Instance;
