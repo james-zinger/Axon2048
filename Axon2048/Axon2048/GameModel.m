@@ -7,15 +7,18 @@
 //
 
 #import "GameModel.h"
-
+#import "Leaderboard.h"
 @implementation GameModel
 
+Leaderboard* _leaderboard;
 
 -(id) init
 {
     self = [super init];
     
     _Board = [[Board alloc] initWithSize:4];
+    
+    _leaderboard = [[Leaderboard alloc] init];
     
     return self;
 }
@@ -35,6 +38,12 @@
 - (int) getScore
 {
     return [_Board getScore];
+}
+
+- (NSMutableArray*) getLeaderboard
+{
+    
+    return nil;
 }
 
 // Singleton instance variable
