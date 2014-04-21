@@ -7,7 +7,7 @@
 //
 
 #import "Board.h"
-#import "Cardaction.h"
+#import "CardAction.h"
 
 @implementation Board
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-#import "Tileindex.h"
+#import "TileIndex.h"
 #import "Direction.h"
 #import "Board.h"
 

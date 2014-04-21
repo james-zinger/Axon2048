@@ -51,7 +51,8 @@
 		3E752E8E18FF70FA00CE4767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E752E8D18FF70FA00CE4767 /* Main.storyboard */; };
 		3E81702A18FF7956006CFCC8 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E81702818FF7956006CFCC8 /* Ubuntu-B.ttf */; };
 		3E81702B18FF7956006CFCC8 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E81702918FF7956006CFCC8 /* Ubuntu-R.ttf */; };
-		3EAE3E2718FF73D0000992D5 /* Cardaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE3E2618FF73D0000992D5 /* Cardaction.m */; };
+		3EAE3E2718FF73D0000992D5 /* CardAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE3E2618FF73D0000992D5 /* CardAction.m */; };
+		3EC9AF5E1905DDFD00D26CC3 /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9AF5D1905DDFD00D26CC3 /* CardSprite.m */; };
 		6644C4091905AEED00271C3D /* Leaderboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644C4081905AEED00271C3D /* Leaderboard.m */; };
 		66D9E79418FF1F25000B74AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79318FF1F25000B74AC /* Foundation.framework */; };
 		66D9E79618FF1F25000B74AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79518FF1F25000B74AC /* CoreGraphics.framework */; };
@@ -60,7 +61,7 @@
 		66D9E7A018FF1F25000B74AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E79E18FF1F25000B74AC /* InfoPlist.strings */; };
 		66D9E7A218FF1F25000B74AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7A118FF1F25000B74AC /* main.m */; };
 		66D9E7A618FF1F25000B74AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7A518FF1F25000B74AC /* AppDelegate.m */; };
-		66D9E7AF18FF1F25000B74AC /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7AE18FF1F25000B74AC /* MyScene.m */; };
+		66D9E7AF18FF1F25000B74AC /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9E7AE18FF1F25000B74AC /* GameplayScene.m */; };
 		66D9E7B318FF1F25000B74AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66D9E7B218FF1F25000B74AC /* Images.xcassets */; };
 		66D9E7BA18FF1F25000B74AC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E7B918FF1F25000B74AC /* XCTest.framework */; };
 		66D9E7BB18FF1F25000B74AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79318FF1F25000B74AC /* Foundation.framework */; };
@@ -132,7 +133,10 @@
 		3E81702818FF7956006CFCC8 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
 		3E81702918FF7956006CFCC8 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		3EAE3E2518FF73D0000992D5 /* CardAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAction.h; sourceTree = "<group>"; };
-		3EAE3E2618FF73D0000992D5 /* Cardaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cardaction.m; sourceTree = "<group>"; };
+		3EAE3E2618FF73D0000992D5 /* CardAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAction.m; sourceTree = "<group>"; };
+		3EC9AF581905DA3900D26CC3 /* GameplayState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayState.h; sourceTree = "<group>"; };
+		3EC9AF5C1905DDFD00D26CC3 /* CardSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardSprite.h; sourceTree = "<group>"; };
+		3EC9AF5D1905DDFD00D26CC3 /* CardSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSprite.m; sourceTree = "<group>"; };
 		6644C4071905AEED00271C3D /* Leaderboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leaderboard.h; sourceTree = "<group>"; };
 		6644C4081905AEED00271C3D /* Leaderboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leaderboard.m; sourceTree = "<group>"; };
 		66D9E79018FF1F25000B74AC /* Axon2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Axon2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,8 +150,8 @@
 		66D9E7A318FF1F25000B74AC /* Axon2048-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Axon2048-Prefix.pch"; sourceTree = "<group>"; };
 		66D9E7A418FF1F25000B74AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66D9E7A518FF1F25000B74AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		66D9E7AD18FF1F25000B74AC /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		66D9E7AE18FF1F25000B74AC /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		66D9E7AD18FF1F25000B74AC /* GameplayScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameplayScene.h; sourceTree = "<group>"; };
+		66D9E7AE18FF1F25000B74AC /* GameplayScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameplayScene.m; sourceTree = "<group>"; };
 		66D9E7B218FF1F25000B74AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		66D9E7B818FF1F25000B74AC /* Axon2048Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Axon2048Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D9E7B918FF1F25000B74AC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -156,7 +160,7 @@
 		66D9E7C518FF1F25000B74AC /* Axon2048Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Axon2048Tests.m; sourceTree = "<group>"; };
 		66D9E7CF18FF2267000B74AC /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
 		66D9E7D018FF2267000B74AC /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
-		66D9E7D318FF288F000B74AC /* Tileindex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tileindex.h; sourceTree = "<group>"; };
+		66D9E7D318FF288F000B74AC /* TileIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileIndex.h; sourceTree = "<group>"; };
 		66D9E7D618FF2AF1000B74AC /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		66D9E7D718FF2AF1000B74AC /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		66D9E7D918FF2BE2000B74AC /* Direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Direction.h; sourceTree = "<group>"; };
@@ -339,6 +343,18 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		3EC9AF5B1905DDA700D26CC3 /* SKScene */ = {
+			isa = PBXGroup;
+			children = (
+				66D9E7AD18FF1F25000B74AC /* GameplayScene.h */,
+				66D9E7AE18FF1F25000B74AC /* GameplayScene.m */,
+				3EC9AF581905DA3900D26CC3 /* GameplayState.h */,
+				3EC9AF5C1905DDFD00D26CC3 /* CardSprite.h */,
+				3EC9AF5D1905DDFD00D26CC3 /* CardSprite.m */,
+			);
+			name = SKScene;
+			sourceTree = "<group>";
+		};
 		66D9E78718FF1F25000B74AC = {
 			isa = PBXGroup;
 			children = (
@@ -374,17 +390,16 @@
 		66D9E79B18FF1F25000B74AC /* Axon2048 */ = {
 			isa = PBXGroup;
 			children = (
+				66D9E7A418FF1F25000B74AC /* AppDelegate.h */,
+				66D9E7A518FF1F25000B74AC /* AppDelegate.m */,
 				3E527E621900607F00DF902F /* Resources */,
 				3E527E5419005E2900DF902F /* ViewControllers */,
-				3EAE3E2518FF73D0000992D5 /* CardAction.h */,
-				66D9E7D918FF2BE2000B74AC /* Direction.h */,
-				66D9E7D318FF288F000B74AC /* Tileindex.h */,
 				66D9E7D218FF27A5000B74AC /* GameModel */,
-				66D9E7A418FF1F25000B74AC /* AppDelegate.h */,
-				66D9E7AD18FF1F25000B74AC /* MyScene.h */,
-				66D9E7A518FF1F25000B74AC /* AppDelegate.m */,
-				3EAE3E2618FF73D0000992D5 /* Cardaction.m */,
-				66D9E7AE18FF1F25000B74AC /* MyScene.m */,
+				3EC9AF5B1905DDA700D26CC3 /* SKScene */,
+				3EAE3E2518FF73D0000992D5 /* CardAction.h */,
+				3EAE3E2618FF73D0000992D5 /* CardAction.m */,
+				66D9E7D918FF2BE2000B74AC /* Direction.h */,
+				66D9E7D318FF288F000B74AC /* TileIndex.h */,
 				66D9E7B218FF1F25000B74AC /* Images.xcassets */,
 				66D9E79C18FF1F25000B74AC /* Supporting Files */,
 			);
@@ -575,9 +590,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D9E7D818FF2AF1000B74AC /* Board.m in Sources */,
-				66D9E7AF18FF1F25000B74AC /* MyScene.m in Sources */,
+				66D9E7AF18FF1F25000B74AC /* GameplayScene.m in Sources */,
 				66D9E7E118FF36C2000B74AC /* Card.m in Sources */,
-				3EAE3E2718FF73D0000992D5 /* Cardaction.m in Sources */,
+				3EC9AF5E1905DDFD00D26CC3 /* CardSprite.m in Sources */,
+				3EAE3E2718FF73D0000992D5 /* CardAction.m in Sources */,
 				66D9E7D118FF2267000B74AC /* GameModel.m in Sources */,
 				6644C4091905AEED00271C3D /* Leaderboard.m in Sources */,
 				66D9E7A618FF1F25000B74AC /* AppDelegate.m in Sources */,

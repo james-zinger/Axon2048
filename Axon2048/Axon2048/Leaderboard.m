@@ -20,7 +20,7 @@ NSMutableArray* _leaderboard;
 	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 	NSData* data = [prefs dataForKey:@"Leaderboards"];
 	_leaderboard = (NSMutableArray*) data;
-	_leaderboard =
+	//_leaderboard =
 	
     return self;
 }

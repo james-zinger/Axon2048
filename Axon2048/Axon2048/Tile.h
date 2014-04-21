@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "Direction.h"
-#import "Tileindex.h"
+#import "TileIndex.h"
 #import "Card.h"
 
 @interface Tile : NSObject
