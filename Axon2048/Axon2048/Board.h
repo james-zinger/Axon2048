@@ -20,7 +20,7 @@
 
 - (TileIndex) addCardAtRandomIndex;
 
-- (id) initWithSize: (int) Size;
+- (id) initWithGridSize: (int) Size;
 
 - (int) getScore;
 

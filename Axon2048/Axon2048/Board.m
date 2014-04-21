@@ -15,7 +15,7 @@ NSMutableArray* _Cards;
 NSMutableArray* _TileGrid;
 int _Size;
 
--(id) initWithSize:(int)Size
+-(id) initWithGridSize:(int)Size
 {
     self = [super init];
     
