@@ -28,10 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    
-    
-    [GameModel Instance];
     
     // Configure the view.
     SKView * skView = (SKView *)self.view;
