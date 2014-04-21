@@ -7,19 +7,18 @@
 //
 
 #import "GameplayViewController.h"
-#import "GameModel.h"
 #import "MyScene.h"
-
-@interface GameplayViewController ()
-
-@end
 
 @implementation GameplayViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+SKView* skView;
+SKSpriteNode* background;
+
+- (id)initWithNibName: ( NSString * )nibNameOrNil bundle: ( NSBundle * )nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    self = [super initWithNibName: nibNameOrNil bundle: nibBundleOrNil];
+    if ( self )
+    {
         // Custom initialization
     }
     return self;
@@ -28,28 +27,47 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
     
+    // Configure the view
+    skView = [[SKView alloc] initWithFrame: _gameplayView.bounds];
+    [_gameplayView addSubview: skView];
+    //skView.showsFPS = YES;
+    //skView.showsNodeCount = YES;
     
-    [GameModel Instance];
-    
-    // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    
-    // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    // Create and configure the scene
+    MyScene* scene = [MyScene sceneWithSize: skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    [scene controller: self];
+    [scene controller: self];
+    [skView presentScene: scene];
     
-    // Present the scene.
-    [skView presentScene:scene];
+    // Create a background image for the scene
+    background = [SKSpriteNode spriteNodeWithImageNamed: @"Gameplay-Background-SKView.png"];
+    background.position = CGPointMake( CGRectGetMidX( skView.frame ), CGRectGetMidY( skView.frame ) );
+    [background setScale: 0.5];
+    [scene addChild: background];
+    
+    // Set fonts for the score display labels (this can't be done through XCode's UI)
+    _bestScoreLabel.font = [UIFont fontWithName: @"Ubuntu-Bold" size: 24];
+    _currentScoreLabel.font = [UIFont fontWithName: @"Ubuntu-Bold" size: 24];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+// Scoring
+-(void)setBestScore: ( int )value
+{
+    _bestScoreLabel.text = [NSString stringWithFormat: @"%d", value];
+}
+-(void)setCurrentScore: ( int )value
+{
+    _currentScoreLabel.text = [NSString stringWithFormat: @"%d", value];
 }
 
 @end

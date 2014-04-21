@@ -11,4 +11,11 @@
 
 @interface GameplayViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *bestScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentScoreLabel;
+@property (weak, nonatomic) IBOutlet UIView *gameplayView;
+
+-(void)setBestScore: ( int )value;
+-(void)setCurrentScore: ( int )value;
+
 @end

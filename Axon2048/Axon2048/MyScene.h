@@ -8,6 +8,14 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface MyScene : SKScene
+@class GameplayViewController;
+
+@interface MyScene : SKScene <UIGestureRecognizerDelegate>
+
+@property (weak, nonatomic) GameplayViewController* controller;
+@property (strong, nonatomic) UISwipeGestureRecognizer* swipeDownGesture;
+@property (strong, nonatomic) UISwipeGestureRecognizer* swipeLeftGesture;
+@property (strong, nonatomic) UISwipeGestureRecognizer* swipeRightGesture;
+@property (strong, nonatomic) UISwipeGestureRecognizer* swipeUpGesture;
 
 @end

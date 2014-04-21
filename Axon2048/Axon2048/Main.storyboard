@@ -160,22 +160,32 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy3-EI-EMS">
-                                <rect key="frame" x="245" y="36" width="70" height="21"/>
+                                <rect key="frame" x="245" y="38" width="70" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geG-kQ-k4C">
-                                <rect key="frame" x="165" y="36" width="70" height="21"/>
+                                <rect key="frame" x="165" y="38" width="70" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-ip-y4H">
+                                <rect key="frame" x="0.0" y="76" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="bestScoreLabel" destination="geG-kQ-k4C" id="d6d-Tw-6Xw"/>
+                        <outlet property="currentScoreLabel" destination="jy3-EI-EMS" id="pPr-zW-3Qg"/>
+                        <outlet property="gameplayView" destination="cc7-ip-y4H" id="InC-pq-mqs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDt-Gh-ehp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -497,8 +507,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sM2-gr-JEA"/>
-        <segue reference="zls-Vc-j5T"/>
         <segue reference="JT3-b7-uMU"/>
+        <segue reference="Ufc-DG-j8i"/>
+        <segue reference="sM2-gr-JEA"/>
     </inferredMetricsTieBreakers>
 </document>
