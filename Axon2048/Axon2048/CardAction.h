@@ -11,9 +11,9 @@
 
 @interface CardAction : NSObject
 
-@property TileIndex     lookupIndex;
-@property TileIndex     newIndex;
-@property int           newValue;
-@property BOOL          shouldDelete;
+@property (nonatomic) TileIndex*    lookupIndex;
+@property (nonatomic) TileIndex*    newIndex;
+@property             int           newValue;
+@property             BOOL          shouldDelete;
 
 @end

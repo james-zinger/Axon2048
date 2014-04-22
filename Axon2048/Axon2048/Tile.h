@@ -15,9 +15,9 @@
 @interface Tile : NSObject
 
 @property Card* Card;
-@property TileIndex Index;
+@property TileIndex* Index;
 
-- (id) initAtIndex: (TileIndex) Index;
+- (id) initAtIndex: (TileIndex*) Index;
 
 - (Tile*) getNeightbourInDirection: (DIRECTION) Direction;
 

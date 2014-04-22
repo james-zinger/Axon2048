@@ -131,7 +131,7 @@
 		3E90D3891906BE6C008784F8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3E90D38B1906CB96008784F8 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
 		3E90D38C1906CB96008784F8 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
-		3EAE3E2518FF73D0000992D5 /* CardAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAction.h; sourceTree = "<group>"; };
+		3EAE3E2518FF73D0000992D5 /* CardAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAction.h; sourceTree = "<group>"; wrapsLines = 1; };
 		3EAE3E2618FF73D0000992D5 /* CardAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAction.m; sourceTree = "<group>"; };
 		3EC9AF581905DA3900D26CC3 /* GameplayState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayState.h; sourceTree = "<group>"; };
 		3EC9AF5C1905DDFD00D26CC3 /* CardSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardSprite.h; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		66D9E7A418FF1F25000B74AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66D9E7A518FF1F25000B74AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		66D9E7AD18FF1F25000B74AC /* GameplayScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameplayScene.h; sourceTree = "<group>"; };
-		66D9E7AE18FF1F25000B74AC /* GameplayScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameplayScene.m; sourceTree = "<group>"; };
+		66D9E7AE18FF1F25000B74AC /* GameplayScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameplayScene.m; sourceTree = "<group>"; usesTabs = 1; };
 		66D9E7B218FF1F25000B74AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		66D9E7B818FF1F25000B74AC /* Axon2048Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Axon2048Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D9E7B918FF1F25000B74AC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };

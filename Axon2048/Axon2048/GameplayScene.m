@@ -34,6 +34,7 @@ int                     _bestScore;
 int                     _currentScore;
 bool                    _moveStarted;
 DIRECTION               _swipeDirection;
+NSMutableArray*			_tilesToNull;
 
 
 // Init
@@ -55,6 +56,8 @@ DIRECTION               _swipeDirection;
     
     // Set the move as not started
     _moveStarted = NO;
+	
+	_tilesToNull = [[NSMutableArray alloc]init];
     
     // Set the initial scores to 0
     [_controller setBestScore: 0];
@@ -105,13 +108,13 @@ DIRECTION               _swipeDirection;
         case BEGIN_TURN:
             {
                 // Add a new card to the grid
-                TileIndex newCardIndex = [_model addRandomCard];
+                TileIndex *newCardIndex = [_model addRandomCard];
                 
                 // If its index is (-1, -1), a card couldn't be added, so the player loses.
                 if ( newCardIndex.x == -1 && newCardIndex.y == -1 )
                 {
                     // Player loses -- switch view to the lose screen
-                    [_controller pushViewController: _controller. animated: YES];
+                    //[_controller pushViewController: _controller. animated: YES];
                 }
                 
                 // Start waiting for the user's swipe
@@ -178,15 +181,25 @@ DIRECTION               _swipeDirection;
                             [sprite.node runAction: skAction];
                             
                             // Ensure that this card has been removed from the grid
-                            _cardSprites[ sprite.index.x ][ sprite.index.y ] = [NSNull null];
+							if ([_tilesToNull indexOfObject:sprite.index] == NSNotFound)
+								[_tilesToNull addObject:sprite.index];
+							
                         }
                         else
                         {
                             // Set the card sprite's new index in itself and in the grid
-                            _cardSprites[ sprite.index.x ][ sprite.index.y ] = [NSNull null];
-                            sprite.index = cardAction.newIndex;
+                            if ([_tilesToNull indexOfObject:sprite.index] == NSNotFound)
+								[_tilesToNull addObject:sprite.index];
+							
+							sprite.index = cardAction.newIndex;
                             _cardSprites[ sprite.index.x ][ sprite.index.y ] = sprite;
-                            
+							
+							// If the tile the object is moving to is marked to be null remove it.
+                            if ([_tilesToNull indexOfObject:sprite.index] != NSNotFound)
+								[_tilesToNull removeObject:sprite.index];
+
+							
+							
                             // Remove the reference to this card action
                             sprite.cardAction = nil;
                         }
@@ -204,6 +217,15 @@ DIRECTION               _swipeDirection;
                 
                 // Make sure this is set false for the next time around
                 _moveStarted = NO;
+				
+				// Null all the tiles the update has marked for nulling
+				for (TileIndex* tileIndex in _tilesToNull)
+				{
+					_cardSprites[[tileIndex x]][[tileIndex y]] = [NSNull null];
+				}
+				
+				// clean the array to prep for the next set of tiles to null
+				[_tilesToNull removeAllObjects];
             }
             
             break;
@@ -245,7 +267,7 @@ DIRECTION               _swipeDirection;
                 if ( cardAction.newValue == 2048 )
                 {
                     // If an action has a newValue of 2048, the player wins -- switch view to the win scene
-                    [_controller pushViewController: _controller. animated: YES];
+                   // [_controller pushViewController: _controller. animated: YES];
                 }
             }
             
@@ -265,7 +287,7 @@ DIRECTION               _swipeDirection;
 
 // Cards
 
--( void )addCardSprite: ( TileIndex )index
+-( void )addCardSprite: ( TileIndex *)index
 {
     // Create a new card at the given index in the grid
     _cardSprites[ index.x ][ index.y ] = [[CardSprite alloc] init];
@@ -282,7 +304,7 @@ DIRECTION               _swipeDirection;
     
 }
 
--( CGPoint )indexToPosition: ( TileIndex )index
+-( CGPoint )indexToPosition: ( TileIndex *)index
 {
     //return CGPointMake(0,0);
     return CGPointMake( 40 + ( 80 * index.x ), 48 + 40 + ( 80 * ( 3 - index.y ) ) );

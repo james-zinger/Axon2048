@@ -14,11 +14,11 @@
 @interface CardSprite : NSObject
 
 @property (nonatomic) int value;
-@property (nonatomic) TileIndex index;
+@property (nonatomic) TileIndex* index;
 @property (strong, nonatomic) SKSpriteNode* node;
 @property (strong, nonatomic) CardAction* cardAction;
 
 -( void )setValueAndAppearance: ( int )value;
--( void )setIndexAndPosition: ( TileIndex )index;
+-( void )setIndexAndPosition: ( TileIndex *)index;
 
 @end

@@ -30,7 +30,7 @@ int _Size;
         for (int j = 0; j < Size; j++)
         {
             
-            TileIndex index;
+            TileIndex *index;
             index.x = i;
             index.y = j;
             _TileGrid[i][j] = [[Tile alloc]initAtIndex:index];
@@ -42,7 +42,7 @@ int _Size;
     return self;
 }
 
-- (BOOL)addCardAtIndex:(TileIndex)Index
+- (BOOL)addCardAtIndex:(TileIndex*)Index
 {
     Tile* tile = [self getTileAtIndex:Index];
     
@@ -60,9 +60,9 @@ int _Size;
     return true;
 }
 
-- (TileIndex) addCardAtRandomIndex
+- (TileIndex*) addCardAtRandomIndex
 {
-    TileIndex index;
+    TileIndex *index;
     
     NSMutableArray* freeTiles = [self getEmptyTiles];
     
@@ -117,7 +117,7 @@ int _Size;
     return array;
 }
 
--(Tile *)getTileAtIndex:(TileIndex)Index
+-(Tile *)getTileAtIndex:(TileIndex*)Index
 {
     Tile* tile = nil;
     
@@ -130,7 +130,7 @@ int _Size;
 }
 
 // Private functions
--(BOOL) isTileIndexValid:(TileIndex)Index
+-(BOOL) isTileIndexValid:(TileIndex*)Index
 {
     if (Index.x < 0 || Index.x >= _Size || Index.y < 0 || Index.y >= _Size)
     {

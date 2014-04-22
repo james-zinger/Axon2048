@@ -21,7 +21,7 @@
 - (NSMutableArray*) UpdateWithDirection: (DIRECTION) Direction;
 
 // Attempts to add a random tile to the board
-- (TileIndex) addRandomCard;
+- (TileIndex*) addRandomCard;
 
 // Gets the score of the current game
 - (int) getScore;

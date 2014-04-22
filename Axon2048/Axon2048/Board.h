@@ -16,11 +16,11 @@
 
 @property (readonly) int score;
 
-- (Tile*) getTileAtIndex:(TileIndex)Index;
+- (Tile*) getTileAtIndex:(TileIndex*)Index;
 
-- (BOOL) addCardAtIndex:(TileIndex)Index;
+- (BOOL) addCardAtIndex:(TileIndex*)Index;
 
-- (TileIndex) addCardAtRandomIndex;
+- (TileIndex*) addCardAtRandomIndex;
 
 - (id) initWithGridSize: (int) Size;
 

@@ -9,8 +9,19 @@
 #import <Foundation/Foundation.h>
 
 // This is a struct to define a 2d coordinate on the tile grid
-typedef struct
-{
-    int x;
-    int y;
-} TileIndex ;
+//typedef struct
+//{
+//    int x;
+//    int y;
+//} TileIndex ;
+
+@interface TileIndex : NSObject
+
+@property NSInteger x;
+@property NSInteger y;
+
+@end
+
+@implementation TileIndex
+
+@end

@@ -72,7 +72,7 @@ static NSMutableDictionary* _images = nil;
     }
 }
 
--( void )setIndexAndPosition: ( TileIndex )index
+-( void )setIndexAndPosition: ( TileIndex *)index
 {
     self.index = index;
     //self.node.position = CGPointMake(0,0);

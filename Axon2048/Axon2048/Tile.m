@@ -21,7 +21,7 @@ Board* _board;
 
     _Card = nil;
     
-    TileIndex index;
+    TileIndex *index;
     index.x = -1;
     index.y = -1;
     
@@ -30,7 +30,7 @@ Board* _board;
     return self;
 }
 
-- (id) initAtIndex:(TileIndex)Index
+- (id) initAtIndex:(TileIndex*)Index
 {
     self = [super init];
     
@@ -44,7 +44,7 @@ Board* _board;
 - (Tile*)getNeightbourInDirection:(DIRECTION)Direction
 {
     Tile* tile = nil;
-    TileIndex lookup;
+    TileIndex *lookup;
     
     lookup.x = _Index.x;
     lookup.y = _Index.y;
