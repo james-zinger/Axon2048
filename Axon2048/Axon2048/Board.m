@@ -188,7 +188,6 @@ int _Size;
             Tile* tileContext = [tile getNeightbourInDirection: UP];
             
             [self CompareTile:tile WithTile:tileContext ToArray:changes];
-
         }
     }
     
@@ -207,11 +206,12 @@ int _Size;
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
+            {
                 continue;
-            
+            }
             
             Tile* tileContext = [tile getNeightbourInDirection: DOWN];
-
+            
             [self CompareTile:tile WithTile:tileContext ToArray:changes];
         }
     }
@@ -235,9 +235,8 @@ int _Size;
             }
             
             Tile* tileContext = [tile getNeightbourInDirection: LEFT];
-           
-            [self CompareTile:tile WithTile:tileContext ToArray:changes];
             
+            [self CompareTile:tile WithTile:tileContext ToArray:changes];
         }
     }
     
@@ -256,19 +255,18 @@ int _Size;
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
+            {
                 continue;
-            
+            }
             
             Tile* tileContext = [tile getNeightbourInDirection: RIGHT];
-            
             [self CompareTile:tile WithTile:tileContext ToArray:changes];
         }
     }
     return changes;
 }
 
-
-- (void) CompareTile: (Tile*) Tile1 WithTile: (Tile*) Tile2 ToArray: (NSMutableArray*) changes
+- (void) CompareTile: (Tile*) Tile1 WithTile:(Tile*) Tile2 ToArray:(NSMutableArray*) changes
 {
     Card* card = [Tile1 Card];
     
@@ -286,7 +284,7 @@ int _Size;
         action.shouldDelete = NO;
         action.newValue     = card.Value;
         action.newIndex     = Tile2.Index;
-        [changes addObject: action];
+        [changes addObject:action];
     }
     
     else if ([targetCard Value] == [card Value])
@@ -312,6 +310,8 @@ int _Size;
         [changes addObject:action2];
         
     }
+
 }
+
 
 @end
