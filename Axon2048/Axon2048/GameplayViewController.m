@@ -49,7 +49,10 @@ SKSpriteNode* _background;
     // startWithController() is a custom initialization we need to run to start the game
     [scene startWithController: self];
     
-    
+    // Store the win and lose screens so they can be used later
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    _winScreen = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"winScreen"];
+    _loseScreen = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loseScreen"];
 }
 
 
