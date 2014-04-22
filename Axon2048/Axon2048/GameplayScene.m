@@ -44,7 +44,7 @@ DIRECTION               _swipeDirection;
     
     // Set the model reference and reset it so we start from scratch
     _model = GameModel.Instance;
-    // [_model reset];
+    [_model startWithSize: 4];
     
     // Set the initial gameplay state
     _state = BEGIN_TURN;
@@ -66,7 +66,7 @@ DIRECTION               _swipeDirection;
         [_cardSprites addObject:[[NSMutableArray alloc] initWithCapacity: 4]];
         for (int col = 0; col < 4; col++)
         {
-            _cardSprites[ row ][ col ] = nil;
+            _cardSprites[ row ][ col ] = [NSNull null];
         }
     }
     
@@ -80,7 +80,7 @@ DIRECTION               _swipeDirection;
     
     // Gesture detection for left swipe
     _swipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget: self action: @selector( handleSwipeLeft: )];
-    [_swipeRightGesture setDirection: UISwipeGestureRecognizerDirectionLeft];
+    [_swipeLeftGesture setDirection: UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer: _swipeLeftGesture ];
     
     // Gesture detection for right swipe
@@ -163,14 +163,28 @@ DIRECTION               _swipeDirection;
                         
                         // Don't need to set the position -- the SKAction sets that in the node as it goes.
                         
-                        // Set the card sprite's new index in itself and in the grid
-                        _cardSprites[ sprite.index.x ][ sprite.index.y ] = nil;
-                        sprite.index = cardAction.newIndex;
-                        _cardSprites[ sprite.index.x ][ sprite.index.y ] = sprite;
+                        // If the card action indicates that this should be deleted, do that now.
+                        if ( cardAction.shouldDelete )
+                        {
+                            SKAction* skAction = [SKAction removeFromParent];
+                            [sprite.node runAction: skAction];
+                            
+                            // Ensure that this card has been removed from the grid
+                            _cardSprites[ sprite.index.x ][ sprite.index.y ] = [NSNull null];
+                        }
+                        else
+                        {
+                            // Set the card sprite's new index in itself and in the grid
+                            _cardSprites[ sprite.index.x ][ sprite.index.y ] = [NSNull null];
+                            sprite.index = cardAction.newIndex;
+                            _cardSprites[ sprite.index.x ][ sprite.index.y ] = sprite;
+                            
+                            // Remove the reference to this card action
+                            sprite.cardAction = nil;
+                        }
                         
                         // Remove this from the move actions once it reaches the new position
                         [_moveActions removeObject: cardAction];
-                        sprite.cardAction = nil;
                         
                     }];
                 }
@@ -240,11 +254,19 @@ DIRECTION               _swipeDirection;
     
     // Set the position of the card to the given index
     [sprite setIndexAndPosition: index];
+    
+    // Add the new card's node to the scene
+    [sprite.node setScale: 0.5];
+    [self addChild: sprite.node];
+    
+    NSLog( @"Pos: %f, %f -- Index: %d, %d", sprite.node.position.x, sprite.node.position.y, sprite.index.x, sprite.index.y );
+    
 }
 
 -( CGPoint )indexToPosition: ( TileIndex )index
 {
-    return CGPointMake( 40 + 80 * index.x, 96 + 40 + 80 * ( 3 - index.y ) );
+    //return CGPointMake(0,0);
+    return CGPointMake( 40 + ( 80 * index.x ), 48 + 40 + ( 80 * ( 3 - index.y ) ) );
 }
 
 
@@ -293,7 +315,7 @@ DIRECTION               _swipeDirection;
 {
     _otherActions = actions;
     _moveActions = [[NSMutableArray alloc] init];
-    for ( int i = 0; i < [_otherActions count]; i++ )
+    for ( int i = [_otherActions count] - 1; i >= 0; i-- )
     {
         // Check if the action is a move -- Move these actions into the _moveActions array.
         CardAction* action = _otherActions[ i ];

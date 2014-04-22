@@ -75,7 +75,8 @@ static NSMutableDictionary* _images = nil;
 -( void )setIndexAndPosition: ( TileIndex )index
 {
     self.index = index;
-    self.node.position = CGPointMake( 40 + 80 * index.x, 96 + 40 + 80 * ( 3 - index.y ) );
+    //self.node.position = CGPointMake(0,0);
+    self.node.position = CGPointMake( 40 + 80 * index.x, 48 + 40 + 80 * ( 3 - index.y ) );
 }
 
 @end

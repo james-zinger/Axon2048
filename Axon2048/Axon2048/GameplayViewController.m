@@ -35,10 +35,9 @@ SKSpriteNode* _background;
     //skView.showsFPS = YES;
     //skView.showsNodeCount = YES;
     
-    // Create and configure the scene -- startWithController() is a custom initialization we need to run
+    // Create and configure the scene
     GameplayScene* scene = [GameplayScene sceneWithSize: _skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    [scene startWithController: self];
     [_skView presentScene: scene];
     
     // Create a background image for the scene
@@ -46,6 +45,9 @@ SKSpriteNode* _background;
     _background.position = CGPointMake( CGRectGetMidX( _skView.frame ), CGRectGetMidY( _skView.frame ) );
     [_background setScale: 0.5];
     [scene addChild: _background];
+    
+    // startWithController() is a custom initialization we need to run to start the game
+    [scene startWithController: self];
 }
 
 

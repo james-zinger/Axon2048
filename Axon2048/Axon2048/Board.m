@@ -123,7 +123,7 @@ int _Size;
 {
     Tile* tile = nil;
     
-    if ([self isTileIndexValid:Index])
+    if (![self isTileIndexValid:Index])
     {
         return tile;
     }
@@ -134,7 +134,7 @@ int _Size;
 // Private functions
 -(BOOL) isTileIndexValid:(TileIndex)Index
 {
-    if (Index.x < 0 || Index.x > _Size || Index.y < 0 || Index.y > _Size)
+    if (Index.x < 0 || Index.x >= _Size || Index.y < 0 || Index.y >= _Size)
     {
         return false;
     }
@@ -200,7 +200,7 @@ int _Size;
     
     // Row Backward
     // Col Forward
-    for (int x = _Size - 1; x < 0; x--)
+    for (int x = _Size - 1; x >= 0; x--)
     {
         for (int y = 0; y < _Size; y++)
         {
@@ -268,6 +268,9 @@ int _Size;
 
 - (void) CompareTile: (Tile*) Tile1 WithTile:(Tile*) Tile2 ToArray:(NSMutableArray*) changes
 {
+    if (Tile2 == nil)
+        return;
+    
     Card* card = [Tile1 Card];
     
     Card* targetCard = [Tile2 Card];
@@ -277,6 +280,7 @@ int _Size;
     {
         
         card.Tile = Tile2;
+        Tile2.Card = card;
         Tile1.Card = nil;
         
         CardAction* action  = [[CardAction alloc] init];

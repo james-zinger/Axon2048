@@ -33,7 +33,7 @@ Leaderboard* _leaderboard;
 // Adds a random tile
 - (TileIndex) addRandomCard
 {
-    if ([self isBoardInitalized])
+    if (![self isBoardInitalized])
         [NSException raise:@"Board is not initalized" format:@"Value of board is nil"];
     
     return [_Board addCardAtRandomIndex];
@@ -41,7 +41,7 @@ Leaderboard* _leaderboard;
 
 - (int) getScore
 {
-    if ([self isBoardInitalized])
+    if (![self isBoardInitalized])
         [NSException raise:@"Board is not initalized" format:@"Value of board is nil"];
 
     return [_Board getScore];
