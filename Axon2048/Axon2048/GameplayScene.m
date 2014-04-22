@@ -145,7 +145,7 @@ DIRECTION               _swipeDirection;
                 }
                 
                 // Animate the move actions
-                for ( int i = 0; i < [_moveActions count]; i++ )
+                for ( int i = [_moveActions count] - 1; i >= 0; i-- )
                 {
                     // Get the new position to move to from the card action
                     CardAction* cardAction = _moveActions[ i ];
@@ -221,7 +221,7 @@ DIRECTION               _swipeDirection;
                     // Create an SKAction to remove the card from its parent node
                     SKAction* skAction = [SKAction removeFromParent];
                     [sprite.node runAction: skAction];
-                    sprite.cardAction = nil;
+                    //sprite.cardAction = nil;
                 }
                 else
                 {

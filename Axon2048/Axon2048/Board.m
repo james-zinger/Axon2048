@@ -197,10 +197,10 @@ int _Size;
     NSMutableArray* changes = [[NSMutableArray alloc] init];
     
     // Row Backward
-    // Col Forward
+    // Col Backward
     for (int x = _Size - 1; x >= 0; x--)
     {
-        for (int y = 0; y < _Size; y++)
+        for (int y = _Size - 1; y >= 0; y--)
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
@@ -246,10 +246,10 @@ int _Size;
     NSMutableArray* changes = [[NSMutableArray alloc] init];
    
     //Col Backward
-    //Row Forward
-    for (int y = _Size - 1; y < 0; y--)
+    //Row Backward
+    for (int y = _Size - 1; y >= 0; y--)
     {
-        for (int x = 0; x < _Size; x++)
+        for (int x = _Size - 1; x >= 0; x--)
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
