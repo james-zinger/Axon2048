@@ -50,7 +50,7 @@ SKSpriteNode* _background;
     [scene startWithController: self];
     
     // Store the win and lose screens so they can be used later
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
     _winScreen = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"winScreen"];
     _loseScreen = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loseScreen"];
 }
