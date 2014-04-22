@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E527E5719005E9000DF902F /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E527E5619005E9000DF902F /* TitleViewController.m */; };
 		3E527E5E19005EF600DF902F /* GameplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E527E5D19005EF600DF902F /* GameplayViewController.m */; };
-		3E527E6119005F1700DF902F /* LeaderboardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E527E6019005F1700DF902F /* LeaderboardTableViewController.m */; };
 		3E5EF7411905C61500B9224D /* Gameplay-Background-SKView.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5EF7401905C61500B9224D /* Gameplay-Background-SKView.png */; };
 		3E6E1D2318FF597000547F78 /* System Shock 2 OST - Engineering.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1CFA18FF597000547F78 /* System Shock 2 OST - Engineering.mp3 */; };
 		3E6E1D2418FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E1CFB18FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 */; };
@@ -52,6 +50,7 @@
 		3E81702A18FF7956006CFCC8 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E81702818FF7956006CFCC8 /* Ubuntu-B.ttf */; };
 		3E81702B18FF7956006CFCC8 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E81702918FF7956006CFCC8 /* Ubuntu-R.ttf */; };
 		3E90D38A1906BE6C008784F8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E90D3891906BE6C008784F8 /* AVFoundation.framework */; };
+		3E90D38D1906CB96008784F8 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E90D38C1906CB96008784F8 /* LeaderboardViewController.m */; };
 		3EAE3E2718FF73D0000992D5 /* CardAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE3E2618FF73D0000992D5 /* CardAction.m */; };
 		3EC9AF5E1905DDFD00D26CC3 /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9AF5D1905DDFD00D26CC3 /* CardSprite.m */; };
 		6644C4091905AEED00271C3D /* Leaderboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644C4081905AEED00271C3D /* Leaderboard.m */; };
@@ -86,12 +85,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E527E5519005E9000DF902F /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
-		3E527E5619005E9000DF902F /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
 		3E527E5C19005EF600DF902F /* GameplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayViewController.h; sourceTree = "<group>"; };
 		3E527E5D19005EF600DF902F /* GameplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayViewController.m; sourceTree = "<group>"; };
-		3E527E5F19005F1700DF902F /* LeaderboardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardTableViewController.h; sourceTree = "<group>"; };
-		3E527E6019005F1700DF902F /* LeaderboardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardTableViewController.m; sourceTree = "<group>"; };
 		3E5EF7401905C61500B9224D /* Gameplay-Background-SKView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gameplay-Background-SKView.png"; sourceTree = "<group>"; };
 		3E6E1CFA18FF597000547F78 /* System Shock 2 OST - Engineering.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "System Shock 2 OST - Engineering.mp3"; sourceTree = "<group>"; };
 		3E6E1CFB18FF597000547F78 /* System Shock 2 OST - Ops 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "System Shock 2 OST - Ops 2.mp3"; sourceTree = "<group>"; };
@@ -134,6 +129,8 @@
 		3E81702818FF7956006CFCC8 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
 		3E81702918FF7956006CFCC8 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		3E90D3891906BE6C008784F8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3E90D38B1906CB96008784F8 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
+		3E90D38C1906CB96008784F8 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
 		3EAE3E2518FF73D0000992D5 /* CardAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAction.h; sourceTree = "<group>"; };
 		3EAE3E2618FF73D0000992D5 /* CardAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAction.m; sourceTree = "<group>"; };
 		3EC9AF581905DA3900D26CC3 /* GameplayState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayState.h; sourceTree = "<group>"; };
@@ -201,12 +198,10 @@
 		3E527E5419005E2900DF902F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3E527E5519005E9000DF902F /* TitleViewController.h */,
-				3E527E5619005E9000DF902F /* TitleViewController.m */,
 				3E527E5C19005EF600DF902F /* GameplayViewController.h */,
 				3E527E5D19005EF600DF902F /* GameplayViewController.m */,
-				3E527E5F19005F1700DF902F /* LeaderboardTableViewController.h */,
-				3E527E6019005F1700DF902F /* LeaderboardTableViewController.m */,
+				3E90D38B1906CB96008784F8 /* LeaderboardViewController.h */,
+				3E90D38C1906CB96008784F8 /* LeaderboardViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -599,12 +594,11 @@
 				3EC9AF5E1905DDFD00D26CC3 /* CardSprite.m in Sources */,
 				3EAE3E2718FF73D0000992D5 /* CardAction.m in Sources */,
 				66D9E7D118FF2267000B74AC /* GameModel.m in Sources */,
+				3E90D38D1906CB96008784F8 /* LeaderboardViewController.m in Sources */,
 				6644C4091905AEED00271C3D /* Leaderboard.m in Sources */,
 				66D9E7A618FF1F25000B74AC /* AppDelegate.m in Sources */,
 				3E527E5E19005EF600DF902F /* GameplayViewController.m in Sources */,
-				3E527E5719005E9000DF902F /* TitleViewController.m in Sources */,
 				66D9E7DE18FF30C8000B74AC /* Tile.m in Sources */,
-				3E527E6119005F1700DF902F /* LeaderboardTableViewController.m in Sources */,
 				66D9E7A218FF1F25000B74AC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
