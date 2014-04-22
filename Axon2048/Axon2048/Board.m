@@ -186,48 +186,9 @@ int _Size;
             }
             
             Tile* tileContext = [tile getNeightbourInDirection: UP];
-            Card* card = [tile Card];
             
-            Card* targetCard = [tileContext Card];
-            
-            // Move up one index
-            if ( targetCard == nil)
-            {
-                
-                card.Tile = tileContext;
-                tile.Card = nil;
+            [self CompareTile:tile WithTile:tileContext ToArray:changes];
 
-                CardAction* action  = [[CardAction alloc] init];
-                action.lookupIndex  = tile.Index;
-                action.shouldDelete = NO;
-                action.newValue     = card.Value;
-                action.newIndex     = tileContext.Index;
-                [changes addObject:action];
-            }
-            
-            else if ([targetCard Value] == [card Value])
-            {
-                
-                [targetCard doubleValue];
-                
-                CardAction* action1  = [[CardAction alloc] init];
-                action1.lookupIndex  = tile.Index;
-                action1.newIndex     = tileContext.Index;
-                action1.newValue     = card.Value;
-                action1.shouldDelete = YES;
-                [changes addObject:action1];
-                
-                tile.Card = nil;
-                [_Cards removeObject:card];
-                
-                CardAction* action2  = [[CardAction alloc]init];
-                action2.lookupIndex  = tileContext.Index;
-                action2.newIndex     = tileContext.Index;
-                action2.newValue     = targetCard.Value;
-                action2.shouldDelete = NO;
-                [changes addObject:action2];
-                
-            }
         }
     }
     
@@ -246,53 +207,12 @@ int _Size;
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
-            {
                 continue;
-            }
+            
             
             Tile* tileContext = [tile getNeightbourInDirection: DOWN];
-            Card* card = [tile Card];
-            
-            Card* targetCard = [tileContext Card];
-            
-            // Move up one index
-            if ( targetCard == nil)
-            {
-                
-                card.Tile = tileContext;
-                tile.Card = nil;
-                
-                CardAction* action  = [[CardAction alloc] init];
-                action.lookupIndex  = tile.Index;
-                action.shouldDelete = NO;
-                action.newValue     = card.Value;
-                action.newIndex     = tileContext.Index;
-                [changes addObject:action];
-            }
-            
-            else if ([targetCard Value] == [card Value])
-            {
-                
-                [targetCard doubleValue];
-                
-                CardAction* action1  = [[CardAction alloc] init];
-                action1.lookupIndex  = tile.Index;
-                action1.newIndex     = tileContext.Index;
-                action1.newValue     = card.Value;
-                action1.shouldDelete = YES;
-                [changes addObject:action1];
-                
-                tile.Card = nil;
-                [_Cards removeObject:card];
-                
-                CardAction* action2  = [[CardAction alloc]init];
-                action2.lookupIndex  = tileContext.Index;
-                action2.newIndex     = tileContext.Index;
-                action2.newValue     = targetCard.Value;
-                action2.shouldDelete = NO;
-                [changes addObject:action2];
-                
-            }
+
+            [self CompareTile:tile WithTile:tileContext ToArray:changes];
         }
     }
     return changes;
@@ -315,48 +235,10 @@ int _Size;
             }
             
             Tile* tileContext = [tile getNeightbourInDirection: LEFT];
-            Card* card = [tile Card];
+           
+            [self CompareTile:tile WithTile:tileContext ToArray:changes];
             
-            Card* targetCard = [tileContext Card];
-            
-            // Move up one index
-            if ( targetCard == nil)
-            {
-                
-                card.Tile = tileContext;
-                tile.Card = nil;
-                
-                CardAction* action  = [[CardAction alloc] init];
-                action.lookupIndex  = tile.Index;
-                action.shouldDelete = NO;
-                action.newValue     = card.Value;
-                action.newIndex     = tileContext.Index;
-                [changes addObject:action];
-            }
-            
-            else if ([targetCard Value] == [card Value])
-            {
-                
-                [targetCard doubleValue];
-                
-                CardAction* action1  = [[CardAction alloc] init];
-                action1.lookupIndex  = tile.Index;
-                action1.newIndex     = tileContext.Index;
-                action1.newValue     = card.Value;
-                action1.shouldDelete = YES;
-                [changes addObject:action1];
-                
-                tile.Card = nil;
-                [_Cards removeObject:card];
-                
-                CardAction* action2  = [[CardAction alloc]init];
-                action2.lookupIndex  = tileContext.Index;
-                action2.newIndex     = tileContext.Index;
-                action2.newValue     = targetCard.Value;
-                action2.shouldDelete = NO;
-                [changes addObject:action2];
-                
-            }        }
+        }
     }
     
     return changes;
@@ -374,56 +256,62 @@ int _Size;
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
-            {
                 continue;
-            }
+            
             
             Tile* tileContext = [tile getNeightbourInDirection: RIGHT];
-            Card* card = [tile Card];
             
-            Card* targetCard = [tileContext Card];
-            
-            // Move up one index
-            if ( targetCard == nil)
-            {
-                
-                card.Tile = tileContext;
-                tile.Card = nil;
-                
-                CardAction* action  = [[CardAction alloc] init];
-                action.lookupIndex  = tile.Index;
-                action.shouldDelete = NO;
-                action.newValue     = card.Value;
-                action.newIndex     = tileContext.Index;
-                [changes addObject:action];
-            }
-            
-            else if ([targetCard Value] == [card Value])
-            {
-                
-                [targetCard doubleValue];
-                
-                CardAction* action1  = [[CardAction alloc] init];
-                action1.lookupIndex  = tile.Index;
-                action1.newIndex     = tileContext.Index;
-                action1.newValue     = card.Value;
-                action1.shouldDelete = YES;
-                [changes addObject:action1];
-                
-                tile.Card = nil;
-                [_Cards removeObject:card];
-                
-                CardAction* action2  = [[CardAction alloc]init];
-                action2.lookupIndex  = tileContext.Index;
-                action2.newIndex     = tileContext.Index;
-                action2.newValue     = targetCard.Value;
-                action2.shouldDelete = NO;
-                [changes addObject:action2];
-                
-            }
+            [self CompareTile:tile WithTile:tileContext ToArray:changes];
         }
     }
     return changes;
+}
+
+
+- (void) CompareTile: (Tile*) Tile1 WithTile: (Tile*) Tile2 ToArray: (NSMutableArray*) changes
+{
+    Card* card = [Tile1 Card];
+    
+    Card* targetCard = [Tile2 Card];
+    
+    // Move up one index
+    if ( targetCard == nil)
+    {
+        
+        card.Tile = Tile2;
+        Tile1.Card = nil;
+        
+        CardAction* action  = [[CardAction alloc] init];
+        action.lookupIndex  = Tile1.Index;
+        action.shouldDelete = NO;
+        action.newValue     = card.Value;
+        action.newIndex     = Tile2.Index;
+        [changes addObject: action];
+    }
+    
+    else if ([targetCard Value] == [card Value])
+    {
+        
+        [targetCard doubleValue];
+        
+        CardAction* action1  = [[CardAction alloc] init];
+        action1.lookupIndex  = Tile1.Index;
+        action1.newIndex     = Tile2.Index;
+        action1.newValue     = card.Value;
+        action1.shouldDelete = YES;
+        [changes addObject:action1];
+        
+        Tile1.Card = nil;
+        [_Cards removeObject:card];
+        
+        CardAction* action2  = [[CardAction alloc]init];
+        action2.lookupIndex  = Tile2.Index;
+        action2.newIndex     = Tile2.Index;
+        action2.newValue     = targetCard.Value;
+        action2.shouldDelete = NO;
+        [changes addObject:action2];
+        
+    }
 }
 
 @end
