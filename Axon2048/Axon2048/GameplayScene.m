@@ -18,7 +18,7 @@
 
 // Constants
 
-const float MOVE_DURATION = 1.0;
+const float MOVE_DURATION = 0.25;
 
 
 // Private members

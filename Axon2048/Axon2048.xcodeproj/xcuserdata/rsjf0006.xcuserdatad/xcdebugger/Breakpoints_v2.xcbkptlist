@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Axon2048/Board.m"
-            timestampString = "419874344.964087"
+            timestampString = "419875365.068223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-getTileAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -75,11 +75,11 @@
             condition = "Tile2 == nil"
             continueAfterRunningActions = "No"
             filePath = "Axon2048/Board.m"
-            timestampString = "419874344.964087"
+            timestampString = "419875365.068223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "-CompareTile:WithTile:ToArray:"
             landmarkType = "5">
          </BreakpointContent>
@@ -92,11 +92,11 @@
             condition = "Index.x"
             continueAfterRunningActions = "No"
             filePath = "Axon2048/Board.m"
-            timestampString = "419874344.964087"
+            timestampString = "419875365.068223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-getTileAtIndex:"
             landmarkType = "5">
          </BreakpointContent>

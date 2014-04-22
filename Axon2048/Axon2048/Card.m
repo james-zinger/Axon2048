@@ -15,6 +15,8 @@
 - (id) initWithValue:(int)Value
 {
     self = [super init];
+    
+    _HasMerged = NO;
 
     _Value = Value;
     
@@ -27,6 +29,8 @@
 {
     self = [super init];
     
+    _HasMerged = NO;
+    
     _Value = Value;
 
     _Tile = Tile;
@@ -36,6 +40,8 @@
 
 - (void)doubleValue
 {
+    _HasMerged = YES;
+    
     _Value *= 2;
 }
 

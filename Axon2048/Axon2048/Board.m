@@ -108,6 +108,12 @@ int _Size;
             break;
     }
     
+    // If no actions are being returned, we need to clear the merge flags
+    if ( [array count] == 0 )
+    {
+        [self ClearMerges];
+    }
+    
     return array;
 }
 
@@ -255,7 +261,23 @@ int _Size;
             [self CompareTile:tile WithTile:tileContext ToArray:changes];
         }
     }
+    
     return changes;
+}
+
+- (void) ClearMerges
+{
+    for (int y = 0; y < _Size; y++)
+    {
+        for (int x = 0; x < _Size; x++)
+        {
+            Tile* tile = _TileGrid[ x ][ y ];
+            if ( [tile Card] != nil )
+            {
+                tile.Card.HasMerged = NO;
+            }
+        }
+    }
 }
 
 - (void) CompareTile: (Tile*) Tile1 WithTile:(Tile*) Tile2 ToArray:(NSMutableArray*) changes
@@ -281,9 +303,9 @@ int _Size;
         action.newValue     = card.Value;
         action.newIndex     = Tile2.Index;
         [changes addObject:action];
+        
     }
-    
-    else if ([targetCard Value] == [card Value])
+    else if ( !( [targetCard HasMerged] || [card HasMerged] ) && [targetCard Value] == [card Value] )
     {
         
         [targetCard doubleValue];

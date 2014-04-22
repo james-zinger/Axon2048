@@ -12,6 +12,7 @@
 
 @interface Card : NSObject
 
+@property bool HasMerged;
 @property (readonly) int Value;
 @property (weak) Tile* Tile;
 
