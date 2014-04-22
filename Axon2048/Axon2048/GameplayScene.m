@@ -11,19 +11,28 @@
 #import "GameModel.h"
 #import "GameplayState.h"
 #import "CardSprite.h"
+#import "CardAction.h"
 
 @implementation GameplayScene
+
+
+// Constants
+
+const float MOVE_DURATION = 1.0;
 
 
 // Private members
 
 GameplayViewController* _controller;
-GameModel* _model;
-GameplayState _state;
-NSMutableArray* _actions;
-NSMutableArray* _cardSprites;
-int _bestScore;
-int _currentScore;
+GameModel*              _model;
+GameplayState           _state;
+NSMutableArray*         _moveActions;
+NSMutableArray*         _otherActions;
+NSMutableArray*         _cardSprites;
+int                     _bestScore;
+int                     _currentScore;
+bool                    _moveStarted;
+DIRECTION               _swipeDirection;
 
 
 // Init
@@ -39,6 +48,12 @@ int _currentScore;
     
     // Set the initial gameplay state
     _state = BEGIN_TURN;
+    
+    // Set the initial swipe direction
+    _swipeDirection = DOWN;
+    
+    // Set the move as not started
+    _moveStarted = NO;
     
     // Set the initial scores to 0
     [_controller setBestScore: 0];
@@ -88,26 +103,128 @@ int _currentScore;
     {
         case BEGIN_TURN:
             
+            // Add a new card to the grid
             [self addCardSprite: [_model addRandomCard]];
+            
+            // Start waiting for the user's swipe
             _state = WAIT_FOR_USER;
+            
             break;
             
-            
-        case ANIMATE_NEW_CARD:
-            
-            // TODO
-            break;
             
             
         case WAIT_FOR_USER:
             
             // Don't do anything. Just sit here and wait for the user to swipe.
+            
             break;
             
             
-        case ANIMATE_ACTIONS:
             
-            // TODO
+        case ANIMATE_MOVE_ACTIONS:
+            
+            // Move over any acted-on tiles by one tile
+            if ( !_moveStarted )
+            {
+                // Flag the move animation as started so animations don't start several times over
+                _moveStarted = YES;
+                
+                // Step the board and get back a set of actions to do
+                NSMutableArray* actions = [_model UpdateWithDirection: _swipeDirection];
+                
+                if ( [actions count] == 0 )
+                {
+                    // If no actions come back from stepping the board state, the next turn should begin.
+                    _state = BEGIN_TURN;
+                    return;
+                }
+                else
+                {
+                    // If actions were returned, filter them into the move actions list and other actions list.
+                    [self filterActions: actions];
+                }
+                
+                // Animate the move actions
+                for ( int i = 0; i < [_moveActions count]; i++ )
+                {
+                    // Get the new position to move to from the card action
+                    CardAction* cardAction = _moveActions[ i ];
+                    CGPoint newPosition = [self indexToPosition: cardAction.newIndex];
+                    
+                    // Determine which sprite to move by reading the index from the card action
+                    CardSprite* sprite = _cardSprites[ cardAction.lookupIndex.x ][ cardAction.lookupIndex.y ];
+                    
+                    // Store the card action with the card it applies to for now
+                    sprite.cardAction = cardAction;
+                    
+                    // Create an SKAction to move the sprite to its new position
+                    SKAction* skAction = [SKAction moveTo: newPosition duration: MOVE_DURATION];
+                    [sprite.node runAction: skAction completion: ^{
+                        
+                        // Don't need to set the position -- the SKAction sets that in the node as it goes.
+                        
+                        // Set the card sprite's new index in itself and in the grid
+                        _cardSprites[ sprite.index.x ][ sprite.index.y ] = nil;
+                        sprite.index = cardAction.newIndex;
+                        _cardSprites[ sprite.index.x ][ sprite.index.y ] = sprite;
+                        
+                        // Remove this from the move actions once it reaches the new position
+                        [_moveActions removeObject: cardAction];
+                        sprite.cardAction = nil;
+                        
+                    }];
+                }
+            }
+            else if ( [_moveActions count] == 0 )
+            {
+                // All actions have been completed, so move to the next state
+                _state = DO_OTHER_ACTIONS;
+                
+                // Make sure this is set false for the next time around
+                _moveStarted = NO;
+            }
+            
+            break;
+            
+            
+        
+        case DO_OTHER_ACTIONS:
+            
+            // Apply actions that weren't moves instantaneously
+            for ( int i = 0; i < [_otherActions count]; i++ )
+            {
+                // Get the new position to act on to from the card action
+                CardAction* cardAction = _otherActions[ i ];
+                
+                // Determine which sprite to act on by reading the index from the card action
+                CardSprite* sprite = _cardSprites[ cardAction.lookupIndex.x ][ cardAction.lookupIndex.y ];
+                
+                // Store the card action with the card it applies to for now
+                sprite.cardAction = cardAction;
+                
+                if ( cardAction.shouldDelete )
+                {
+                    // Create an SKAction to remove the card from its parent node
+                    SKAction* skAction = [SKAction removeFromParent];
+                    [sprite.node runAction: skAction];
+                    sprite.cardAction = nil;
+                }
+                else
+                {
+                    // Set the card's value and its texture
+                    [sprite setValueAndAppearance: cardAction.newValue];
+                }
+            }
+            
+            // Clear the other actions array to be safe
+            [_otherActions removeAllObjects];
+            
+            // Update the score and push the new values to the view
+            [self updateScore];
+            
+            // Go back to animating moves to get the next set of actions from the board
+            _state = ANIMATE_MOVE_ACTIONS;
+            
             break;
     }
 }
@@ -117,7 +234,17 @@ int _currentScore;
 
 -( void )addCardSprite: ( TileIndex )index
 {
-    _cardSprites[ index.x ][ index.y ] = [[CardSprite alloc] initWithIndex: index];
+    // Create a new card at the given index in the grid
+    _cardSprites[ index.x ][ index.y ] = [[CardSprite alloc] init];
+    CardSprite* sprite = _cardSprites[ index.x ][ index.y ];
+    
+    // Set the position of the card to the given index
+    [sprite setIndexAndPosition: index];
+}
+
+-( CGPoint )indexToPosition: ( TileIndex )index
+{
+    return CGPointMake( 40 + 80 * index.x, 96 + 40 + 80 * ( 3 - index.y ) );
 }
 
 
@@ -127,8 +254,8 @@ int _currentScore;
 {
     if ( _state == WAIT_FOR_USER )
     {
-        _actions = [_model UpdateWithDirection: DOWN];
-        _state = ANIMATING;
+        _state = ANIMATE_MOVE_ACTIONS;
+        _swipeDirection = DOWN;
     }
 }
 
@@ -136,8 +263,8 @@ int _currentScore;
 {
     if ( _state == WAIT_FOR_USER )
     {
-        _actions = [_model UpdateWithDirection: LEFT];
-        _state = ANIMATING;
+        _state = ANIMATE_MOVE_ACTIONS;
+        _swipeDirection = LEFT;
     }
 }
 
@@ -145,8 +272,8 @@ int _currentScore;
 {
     if ( _state == WAIT_FOR_USER )
     {
-        _actions = [_model UpdateWithDirection: RIGHT];
-        _state = ANIMATING;
+        _state = ANIMATE_MOVE_ACTIONS;
+        _swipeDirection = RIGHT;
     }
 }
 
@@ -154,8 +281,27 @@ int _currentScore;
 {
     if ( _state == WAIT_FOR_USER )
     {
-        _actions = [_model UpdateWithDirection: UP];
-        _state = ANIMATING;
+        _state = ANIMATE_MOVE_ACTIONS;
+        _swipeDirection = UP;
+    }
+}
+
+
+// Actions
+
+-( void )filterActions: ( NSMutableArray* )actions
+{
+    _otherActions = actions;
+    _moveActions = [[NSMutableArray alloc] init];
+    for ( int i = 0; i < [_otherActions count]; i++ )
+    {
+        // Check if the action is a move -- Move these actions into the _moveActions array.
+        CardAction* action = _otherActions[ i ];
+        if ( action.lookupIndex.x != action.newIndex.x || action.lookupIndex.y != action.newIndex.y )
+        {
+            [_moveActions addObject: action];
+            [_otherActions removeObject: action];
+        }
     }
 }
 
@@ -170,18 +316,6 @@ int _currentScore;
     {
         [_controller setBestScore: _currentScore];
     }
-}
-
-
-// Animation
-
--( void )doMoveActions
-{
-    
-}
--( void )doOtherActions
-{
-    
 }
 
 

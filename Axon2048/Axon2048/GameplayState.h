@@ -11,7 +11,7 @@
 typedef enum
 {
     BEGIN_TURN = 0,
-    ANIMATE_NEW_CARD,
     WAIT_FOR_USER,
-    ANIMATE_ACTIONS
+    ANIMATE_MOVE_ACTIONS,
+    DO_OTHER_ACTIONS
 } GameplayState;
