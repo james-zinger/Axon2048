@@ -40,10 +40,10 @@ NSRange _range;
     NSData* data = [prefs dataForKey: @"Leaderboard"];
     _leaderboard = ( NSArray* )data;
     
-    // If the data provided by the leaderboard has less than 10 entries, pad it with zeroes and resave it.
-    if ( [_leaderboard count] < 10 )
+    // If the data provided by the leaderboard has less than NUMBER_OF_ENTRIES, pad it with zeroes and resave it.
+    if ( [_leaderboard count] < NUMBER_OF_ENTRIES )
     {
-        while ( [_leaderboard count] < 10 )
+        while ( [_leaderboard count] < NUMBER_OF_ENTRIES )
         {
             [self addEntry: 0];
         }
