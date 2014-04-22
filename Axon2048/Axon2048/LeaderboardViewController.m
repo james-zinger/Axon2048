@@ -32,7 +32,7 @@
     
     // Fetch the array of scores from the model
     GameModel* model = [GameModel Instance];
-    NSMutableArray* scores = [model getLeaderboard];
+    NSArray* scores = [model getLeaderboard];
     
     // Fill the leaderboard labels with content
     _leader01Label.text = [@"1)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 0]]];

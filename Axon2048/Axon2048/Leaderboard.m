@@ -39,6 +39,16 @@ NSRange _range;
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     NSData* data = [prefs dataForKey: @"Leaderboard"];
     _leaderboard = ( NSArray* )data;
+    
+    // If the data provided by the leaderboard has less than NUMBER_OF_ENTRIES, pad it with zeroes and resave it.
+    if ( [_leaderboard count] < NUMBER_OF_ENTRIES )
+    {
+        while ( [_leaderboard count] < NUMBER_OF_ENTRIES )
+        {
+            [self addEntry: 0];
+        }
+        [self saveLeaderboard];
+    }
 	
     return self;
 }

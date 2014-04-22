@@ -114,7 +114,8 @@ NSMutableArray*			_tilesToNull;
                 if ( newCardIndex.x == -1 && newCardIndex.y == -1 )
                 {
                     // Player loses -- switch view to the lose screen
-                    //[_controller pushViewController: _controller. animated: YES];
+					[_controller presentViewController: _controller.loseScreen animated: YES completion: nil];
+
                 }
                 
                 // Start waiting for the user's swipe
@@ -267,7 +268,8 @@ NSMutableArray*			_tilesToNull;
                 if ( cardAction.newValue == 2048 )
                 {
                     // If an action has a newValue of 2048, the player wins -- switch view to the win scene
-                   // [_controller pushViewController: _controller. animated: YES];
+                    [_controller presentViewController: _controller.winScreen animated: YES completion: nil];
+
                 }
             }
             

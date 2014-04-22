@@ -232,7 +232,7 @@
         <!--View Controller-->
         <scene sceneID="8Vi-pY-jlg">
             <objects>
-                <viewController id="bvY-2N-lzg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="winScreen" id="bvY-2N-lzg" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xaI-mQ-MDk"/>
                         <viewControllerLayoutGuide type="bottom" id="5sH-vy-Xt8"/>
@@ -287,7 +287,7 @@
         <!--View Controller-->
         <scene sceneID="HGT-eE-pYs">
             <objects>
-                <viewController id="esv-mC-iXp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loseScreen" id="esv-mC-iXp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oqw-AE-LqH"/>
                         <viewControllerLayoutGuide type="bottom" id="jW6-he-IB8"/>
