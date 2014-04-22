@@ -7,6 +7,7 @@
 //
 
 #import "LeaderboardViewController.h"
+#import "GameModel.h"
 
 @implementation LeaderboardViewController
 
@@ -29,8 +30,21 @@
     _leader09Label.font = [UIFont fontWithName: @"Ubuntu-Bold" size: 18];
     _leader10Label.font = [UIFont fontWithName: @"Ubuntu-Bold" size: 18];
     
+    // Fetch the array of scores from the model
+    GameModel* model = [GameModel Instance];
+    NSMutableArray* scores = [model getLeaderboard];
+    
     // Fill the leaderboard labels with content
-    _leader01Label.text = [@"1) " stringByAppendingString: @"Get my score and put it here"];
+    _leader01Label.text = [@"1)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 0]]];
+    _leader02Label.text = [@"2)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 1]]];
+    _leader03Label.text = [@"3)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 2]]];
+    _leader04Label.text = [@"4)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 3]]];
+    _leader05Label.text = [@"5)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 4]]];
+    _leader06Label.text = [@"6)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 5]]];
+    _leader07Label.text = [@"7)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 6]]];
+    _leader08Label.text = [@"8)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 7]]];
+    _leader09Label.text = [@"9)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 8]]];
+    _leader10Label.text = [@"10) " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 9]]];
 }
 
 

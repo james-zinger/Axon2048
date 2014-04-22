@@ -48,6 +48,8 @@ SKSpriteNode* _background;
     
     // startWithController() is a custom initialization we need to run to start the game
     [scene startWithController: self];
+    
+    
 }
 
 

@@ -12,6 +12,7 @@
 #import "GameplayState.h"
 #import "CardSprite.h"
 #import "CardAction.h"
+#import "TileIndex.h"
 
 @implementation GameplayScene
 
@@ -102,13 +103,20 @@ DIRECTION               _swipeDirection;
     switch ( _state )
     {
         case BEGIN_TURN:
-            
-            // Add a new card to the grid
-            [self addCardSprite: [_model addRandomCard]];
-            
-            // Start waiting for the user's swipe
-            _state = WAIT_FOR_USER;
-            
+            {
+                // Add a new card to the grid
+                TileIndex newCardIndex = [_model addRandomCard];
+                
+                // If its index is (-1, -1), a card couldn't be added, so the player loses.
+                if ( newCardIndex.x == -1 && newCardIndex.y == -1 )
+                {
+                    // Player loses -- switch view to the lose screen
+                    [_controller pushViewController: _controller. animated: YES];
+                }
+                
+                // Start waiting for the user's swipe
+                _state = WAIT_FOR_USER;
+            }
             break;
             
             
@@ -227,6 +235,17 @@ DIRECTION               _swipeDirection;
                 {
                     // Set the card's value and its texture
                     [sprite setValueAndAppearance: cardAction.newValue];
+                }
+            }
+            
+            // Check for winning actions
+            for ( int i = 0; i < [_otherActions count]; i++ )
+            {
+                CardAction* cardAction = _otherActions[ i ];
+                if ( cardAction.newValue == 2048 )
+                {
+                    // If an action has a newValue of 2048, the player wins -- switch view to the win scene
+                    [_controller pushViewController: _controller. animated: YES];
                 }
             }
             

@@ -10,10 +10,10 @@
 
 @interface Leaderboard : NSObject
 
-- (NSMutableArray*) getLeaderboard;
+-( NSArray* ) getLeaderboard;
 
-- (void) addEntry: (int) score;
+-( void ) saveLeaderboard;
 
-- (void) saveLeaderboard;
+-( void ) addEntry: (int) score;
 
 @end

@@ -27,7 +27,7 @@
 - (int) getScore;
 
 // Gets te array of ints for the leader board
-- (NSMutableArray*) getLeaderboard;
+- (NSArray*) getLeaderboard;
 
 // Signal the game model to close
 - (void) applicationClosing;

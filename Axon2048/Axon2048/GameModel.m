@@ -47,7 +47,7 @@ Leaderboard* _leaderboard;
     return [_Board score];
 }
 
-- (NSMutableArray*) getLeaderboard
+- (NSArray*) getLeaderboard
 {
     return [_leaderboard getLeaderboard];
 }
