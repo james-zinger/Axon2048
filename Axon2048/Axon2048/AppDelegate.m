@@ -11,9 +11,17 @@
 
 @implementation AppDelegate
 
+AVAudioPlayer* _audioPlayer;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Begin playing background music
+    NSString* musicFile = [[NSBundle mainBundle] pathForResource: @"System Shock 2 OST - Engineering" ofType: @"mp3"];
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: [NSURL fileURLWithPath: musicFile] error: NULL];
+    _audioPlayer.delegate = self;
+    _audioPlayer.numberOfLoops = -1;
+    [_audioPlayer play];
+    
     return YES;
 }
 							

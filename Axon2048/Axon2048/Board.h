@@ -14,6 +14,8 @@
 
 @interface Board : NSObject
 
+@property (readonly) int score;
+
 - (Tile*) getTileAtIndex:(TileIndex)Index;
 
 - (BOOL) addCardAtIndex:(TileIndex)Index;
@@ -21,8 +23,6 @@
 - (TileIndex) addCardAtRandomIndex;
 
 - (id) initWithGridSize: (int) Size;
-
-- (int) getScore;
 
 - (NSMutableArray*) Update:(DIRECTION) Direction;
 

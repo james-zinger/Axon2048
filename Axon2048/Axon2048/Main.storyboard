@@ -73,6 +73,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,6 +108,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YND-DT-8jU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,6 +183,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="bestScoreLabel" destination="geG-kQ-k4C" id="d6d-Tw-6Xw"/>
                         <outlet property="currentScoreLabel" destination="jy3-EI-EMS" id="pPr-zW-3Qg"/>
@@ -220,6 +223,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkU-dO-4tJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,6 +278,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uoo-pP-e3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,6 +333,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRc-IY-uBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -346,6 +352,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qc6-rY-Mq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -470,6 +477,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYi-XY-EY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,8 +515,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JT3-b7-uMU"/>
-        <segue reference="Ufc-DG-j8i"/>
-        <segue reference="sM2-gr-JEA"/>
+        <segue reference="nL3-8a-NOh"/>
+        <segue reference="dhr-aG-OPd"/>
+        <segue reference="UEb-98-vO4"/>
     </inferredMetricsTieBreakers>
 </document>

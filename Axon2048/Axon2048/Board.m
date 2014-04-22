@@ -21,6 +21,8 @@ int _Size;
     
     _Size = Size;
     
+    _score = 0;
+    
     _TileGrid = [[NSMutableArray alloc] initWithCapacity: Size];
     for (int i = 0; i < Size; i++)
     {
@@ -107,16 +109,6 @@ int _Size;
     }
     
     return array;
-}
-
--(int) getScore
-{
-    int sum = 0;
-    for (Card* c in _Cards)
-    {
-        sum += c.Value;
-    }
-    return sum;
 }
 
 -(Tile *)getTileAtIndex:(TileIndex)Index
@@ -295,6 +287,7 @@ int _Size;
     {
         
         [targetCard doubleValue];
+        _score += [targetCard Value];
         
         CardAction* action1  = [[CardAction alloc] init];
         action1.lookupIndex  = Tile1.Index;

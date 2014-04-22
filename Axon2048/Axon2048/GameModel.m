@@ -44,7 +44,7 @@ Leaderboard* _leaderboard;
     if (![self isBoardInitalized])
         [NSException raise:@"Board is not initalized" format:@"Value of board is nil"];
 
-    return [_Board getScore];
+    return [_Board score];
 }
 
 - (NSMutableArray*) getLeaderboard
