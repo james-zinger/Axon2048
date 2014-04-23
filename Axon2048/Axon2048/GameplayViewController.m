@@ -28,6 +28,9 @@ SKSpriteNode* _background;
     // Set fonts for the score display labels (this can't be done through XCode's UI)
     _bestScoreLabel.font = [UIFont fontWithName: @"Ubuntu-Bold" size: 24];
     _currentScoreLabel.font = [UIFont fontWithName: @"Ubuntu-Bold" size: 24];
+    
+    // Configure the reset button
+    [_resetButton addTarget: self action: @selector( onResetButton: ) forControlEvents: ( UIControlEvents )UIControlEventTouchUpInside];
 
     // Configure the view
     _skView = [[SKView alloc] initWithFrame: _gameplayView.bounds];
@@ -46,15 +49,25 @@ SKSpriteNode* _background;
     [_background setScale: 0.5];
     [scene addChild: _background];
     
-    // startWithController() is a custom initialization we need to run to start the game
-    [scene startWithController: self];
-    
     // Store the win and lose screens so they can be used later
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     _winScreen = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"winScreen"];
     _loseScreen = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loseScreen"];
+    
+    // startWithController() is a custom initialization we need to run to start the game
+    [scene startWithController: self];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    //[self presentViewController: _loseScreen animated: YES completion: nil];
+}
+
+-(void)onResetButton: ( id )sender
+{
+    // Reload the gameplay screen to reset the game
+    [self viewDidLoad];
+}
 
 // Scoring
 

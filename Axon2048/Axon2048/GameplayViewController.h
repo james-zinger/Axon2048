@@ -11,11 +11,12 @@
 
 @interface GameplayViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 @property (weak, nonatomic) IBOutlet UILabel *bestScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentScoreLabel;
 @property (weak, nonatomic) IBOutlet UIView *gameplayView;
-@property (weak, nonatomic) UIViewController *winScreen;
-@property (weak, nonatomic) UIViewController *loseScreen;
+@property (strong, nonatomic) UIViewController *winScreen;
+@property (strong, nonatomic) UIViewController *loseScreen;
 
 -(void)setBestScore: ( int )value;
 -(void)setCurrentScore: ( int )value;

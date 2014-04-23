@@ -30,11 +30,13 @@ GameplayState           _state;
 NSMutableArray*         _moveActions;
 NSMutableArray*         _otherActions;
 NSMutableArray*         _cardSprites;
+NSMutableArray*         _cardSpritesNext;
+NSMutableArray*         _cardSprites1;
+NSMutableArray*         _cardSprites2;
 int                     _bestScore;
 int                     _currentScore;
 bool                    _moveStarted;
 DIRECTION               _swipeDirection;
-NSMutableArray*			_tilesToNull;
 
 
 // Init
@@ -56,23 +58,32 @@ NSMutableArray*			_tilesToNull;
     
     // Set the move as not started
     _moveStarted = NO;
-	
-	_tilesToNull = [[NSMutableArray alloc]init];
     
     // Set the initial scores to 0
     [_controller setBestScore: 0];
     [_controller setCurrentScore: 0];
     
     // Allocate memory for the card sprite grid
-    _cardSprites = [[NSMutableArray alloc] initWithCapacity: 4];
+    _cardSprites1 = [[NSMutableArray alloc] initWithCapacity: 4];
     for (int row = 0; row < 4; row++)
     {
-        [_cardSprites addObject:[[NSMutableArray alloc] initWithCapacity: 4]];
+        [_cardSprites1 addObject:[[NSMutableArray alloc] initWithCapacity: 4]];
         for (int col = 0; col < 4; col++)
         {
-            _cardSprites[ row ][ col ] = [NSNull null];
+            _cardSprites1[ row ][ col ] = [NSNull null];
         }
     }
+	_cardSprites2 = [[NSMutableArray alloc] initWithCapacity: 4];
+    for (int row = 0; row < 4; row++)
+    {
+        [_cardSprites2 addObject:[[NSMutableArray alloc] initWithCapacity: 4]];
+        for (int col = 0; col < 4; col++)
+        {
+            _cardSprites2[ row ][ col ] = [NSNull null];
+        }
+    }
+	_cardSprites = _cardSprites1;
+	_cardSpritesNext = _cardSprites2;
     
     // Add a random card to the card sprite grid
     [self addCardSprite: [_model addRandomCard]];
@@ -180,57 +191,21 @@ NSMutableArray*			_tilesToNull;
                         // If the card action indicates that this should be deleted, do that now.
                         if ( cardAction.shouldDelete )
                         {
+							// Create an SKAction to remove the card from its parent node
                             SKAction* skAction = [SKAction removeFromParent];
                             [sprite.node runAction: skAction];
-                            
-                            // Ensure that this card has been removed from the grid
-							if ([_tilesToNull indexOfObject:sprite.index] == NSNotFound)
-								[_tilesToNull addObject:sprite.index];
 							
-							
-							for (int j = 0; j < [_tilesToNull count]; j++)
-							{
-								TileIndex* tileIndex = _tilesToNull[j];
-								if ([tileIndex x] == sprite.index.x && [tileIndex y] == sprite.index.y)
-								{
-									[_tilesToNull addObject:sprite];
-									break;
-								}
-							}
-							
+							// Remove the sprite from the card sprites grid
+							_cardSprites[ sprite.index.x ][ sprite.index.y ] = [NSNull null];
                         }
                         else
                         {
-                            // Set the card sprite's new index in itself and in the grid
-							for (int j = 0; j < [_tilesToNull count]; j++)
-							{
-								TileIndex* tileIndex = _tilesToNull[j];
-								if ([tileIndex x] == sprite.index.x && [tileIndex y] == sprite.index.y)
-								{
-									[_tilesToNull addObject:sprite];
-									break;
-								}
-							}
-							
+                            // Set the card sprite's new index in itself (that's all we need and ALL WE CAN TRUST)
 							sprite.index = cardAction.updatedIndex;
-                            _cardSprites[ sprite.index.x ][ sprite.index.y ] = sprite;
-
-							*-*
-							// If the tile the object is moving to is marked to be null remove it.
-							for (int j = 0; j < [_tilesToNull count]; j++)
-							{
-								TileIndex* tileIndex = _tilesToNull[j];
-								if ([tileIndex x] != sprite.index.x || [tileIndex y] != sprite.index.y)
-								{
-									[_tilesToNull removeObject:sprite.index];
-								}
-							}
-							              
-							
-							
-                            // Remove the reference to this card action
-                            sprite.cardAction = nil;
                         }
+						
+						// Remove the reference to this card action
+						sprite.cardAction = nil;
                         
                         // Remove this from the move actions once it reaches the new position
                         [_moveActions removeObject: cardAction];
@@ -246,14 +221,8 @@ NSMutableArray*			_tilesToNull;
                 // Make sure this is set false for the next time around
                 _moveStarted = NO;
 				
-				// Null all the tiles the update has marked for nulling
-				for (TileIndex* tileIndex in _tilesToNull)
-				{
-					_cardSprites[[tileIndex x]][[tileIndex y]] = [NSNull null];
-				}
-				
-				// clean the array to prep for the next set of tiles to null
-				[_tilesToNull removeAllObjects];
+				// Swap to the next card sprite buffer
+				[self swapCardSprites];
             }
             
             break;
@@ -279,13 +248,18 @@ NSMutableArray*			_tilesToNull;
                     // Create an SKAction to remove the card from its parent node
                     SKAction* skAction = [SKAction removeFromParent];
                     [sprite.node runAction: skAction];
-                    //sprite.cardAction = nil;
+					
+					// Remove the sprite from the card sprites grid
+                    _cardSprites[ sprite.index.x ][ sprite.index.y ] = [NSNull null];
                 }
                 else
                 {
                     // Set the card's value and its texture
                     [sprite setValueAndAppearance: cardAction.updatedValue];
                 }
+				
+				// Remove the reference to this card action
+				sprite.cardAction = nil;
             }
             
             // Check for winning actions
@@ -297,7 +271,6 @@ NSMutableArray*			_tilesToNull;
                     // If an action has a newValue of 2048, the player wins -- switch view to the win scene
                     [_controller presentViewController: _controller.winScreen animated: YES completion: nil];
 					return;
-
                 }
             }
             
@@ -380,7 +353,7 @@ NSMutableArray*			_tilesToNull;
 }
 
 
-// Actions
+// Utilities
 
 -( void )filterActions: ( NSMutableArray* )actions
 {
@@ -398,9 +371,6 @@ NSMutableArray*			_tilesToNull;
     }
 }
 
-
-// Scoring
-
 -( void )updateScore
 {
     int _currentScore = [_model getScore];
@@ -409,6 +379,46 @@ NSMutableArray*			_tilesToNull;
     {
         [_controller setBestScore: _currentScore];
     }
+}
+
+-( void )swapCardSprites
+{
+	// Build the the next buffer
+	for (int row = 0; row < 4; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+			// Transfer the existing card sprites into the next card sprites grid
+			// Note: We have to trust ONLY the card's index.
+			id spriteID = _cardSprites[ row ][ col ];
+			if ( spriteID != [NSNull null] )
+			{
+				CardSprite* sprite = spriteID;
+				_cardSpritesNext[ sprite.index.x ][ sprite.index.y ] = sprite;
+			}
+        }
+    }
+	
+	// Clear the prev buffer
+	for (int row = 0; row < 4; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            _cardSprites[ row ][ col ] = [NSNull null];
+        }
+    }
+	
+	// Swap to the new buffer
+	if ( _cardSprites == _cardSprites1 )
+	{
+		_cardSprites = _cardSprites2;
+		_cardSpritesNext = _cardSprites1;
+	}
+	else
+	{
+		_cardSprites = _cardSprites1;
+		_cardSpritesNext = _cardSprites2;
+	}
 }
 
 

@@ -202,7 +202,7 @@ int _Size;
     // Col Backward
     for (int y = _Size - 1; y >= 0; y--)
     {
-        for (int x = 0; x > _Size; x++)
+        for (int x = 0; x < _Size; x++)
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
