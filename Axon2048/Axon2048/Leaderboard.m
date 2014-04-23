@@ -1,3 +1,4 @@
+    // Trim the list to length and store the final array as the new leaderboard
 //
 //  Leaderboard.m
 //  Axon2048
@@ -18,7 +19,7 @@ const int NUMBER_OF_ENTRIES = 10;
 
 // Private members
 
-NSArray* _leaderboard;
+NSArray* _entries;
 NSRange _range;
 
 
@@ -29,7 +30,7 @@ NSRange _range;
     self = [super init];
     
     // Initialize the leaderboard array
-    _leaderboard = [[NSArray alloc] init];
+    _entries = [[NSArray alloc] init];
     
     // Configure the range of the leaderboard -- used in addEntry to trim the list to n elements.
     _range.location = 0;
@@ -38,12 +39,15 @@ NSRange _range;
     // Load in the leaderboard as stored to the device's preferences
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     NSData* data = [prefs dataForKey: @"Leaderboard"];
-    _leaderboard = ( NSArray* )data;
+    _entries = ( NSArray* )data;
+    
+    if (_entries == nil)
+        _entries = [[NSArray alloc] init];
     
     // If the data provided by the leaderboard has less than NUMBER_OF_ENTRIES, pad it with zeroes and resave it.
-    if ( [_leaderboard count] < NUMBER_OF_ENTRIES )
+    if ( [_entries count] < NUMBER_OF_ENTRIES )
     {
-        while ( [_leaderboard count] < NUMBER_OF_ENTRIES )
+        while ( [_entries count] < NUMBER_OF_ENTRIES )
         {
             [self addEntry: 0];
         }
@@ -56,29 +60,32 @@ NSRange _range;
 
 // Utilities
 
--( NSArray* ) getLeaderboard
+-( NSArray* ) retrieveLeaderboard
 {
-    return _leaderboard;
+    return _entries;
 }
 
 -( void ) saveLeaderboard
 {
     // Store the leaderboard to the device's preferences
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setObject: _leaderboard forKey: @"Leaderboard"];
+    [prefs setObject: _entries forKey: @"Leaderboard"];
 }
 
 -( void )addEntry: ( int )score
 {
     // Add the new score to the leaderboard and get the resulatant mutated array back
-    NSArray* newArray = [_leaderboard arrayByAddingObject: [NSNumber numberWithInt: score]];
+    NSArray* newArray = [_entries arrayByAddingObject: [NSNumber numberWithInt: score]];
     
     // Sort the data in descending order, and get the resultant mutated array back
     NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey: nil ascending: NO selector: @selector( localizedCompare: )];
     NSArray* sortedArray = [newArray sortedArrayUsingDescriptors:[NSArray arrayWithObject: sortDescriptor]];
     
     // Trim the list to length and store the final array as the new leaderboard
-    _leaderboard = [sortedArray subarrayWithRange: _range];
+    if ([sortedArray count] <= NUMBER_OF_ENTRIES)
+        _entries = sortedArray;
+    else
+        _entries = [sortedArray subarrayWithRange: _range];
 }
                                         
 @end

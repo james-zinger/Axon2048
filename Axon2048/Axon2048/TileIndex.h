@@ -21,7 +21,3 @@
 @property NSInteger y;
 
 @end
-
-@implementation TileIndex
-
-@end

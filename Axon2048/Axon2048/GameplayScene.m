@@ -109,14 +109,16 @@ NSMutableArray*			_tilesToNull;
             {
                 // Add a new card to the grid
                 TileIndex *newCardIndex = [_model addRandomCard];
-                
+				
                 // If its index is (-1, -1), a card couldn't be added, so the player loses.
                 if ( newCardIndex.x == -1 && newCardIndex.y == -1 )
                 {
                     // Player loses -- switch view to the lose screen
 					[_controller presentViewController: _controller.loseScreen animated: YES completion: nil];
-
+					return;
                 }
+				
+				[self addCardSprite:newCardIndex];
                 
                 // Start waiting for the user's swipe
                 _state = WAIT_FOR_USER;
@@ -161,7 +163,7 @@ NSMutableArray*			_tilesToNull;
                 {
                     // Get the new position to move to from the card action
                     CardAction* cardAction = _moveActions[ i ];
-                    CGPoint newPosition = [self indexToPosition: cardAction.newIndex];
+                    CGPoint newPosition = [self indexToPosition: cardAction.updatedIndex];
                     
                     // Determine which sprite to move by reading the index from the card action
                     CardSprite* sprite = _cardSprites[ cardAction.lookupIndex.x ][ cardAction.lookupIndex.y ];
@@ -185,20 +187,45 @@ NSMutableArray*			_tilesToNull;
 							if ([_tilesToNull indexOfObject:sprite.index] == NSNotFound)
 								[_tilesToNull addObject:sprite.index];
 							
+							
+							for (int j = 0; j < [_tilesToNull count]; j++)
+							{
+								TileIndex* tileIndex = _tilesToNull[j];
+								if ([tileIndex x] == sprite.index.x && [tileIndex y] == sprite.index.y)
+								{
+									[_tilesToNull addObject:sprite];
+									break;
+								}
+							}
+							
                         }
                         else
                         {
                             // Set the card sprite's new index in itself and in the grid
-                            if ([_tilesToNull indexOfObject:sprite.index] == NSNotFound)
-								[_tilesToNull addObject:sprite.index];
+							for (int j = 0; j < [_tilesToNull count]; j++)
+							{
+								TileIndex* tileIndex = _tilesToNull[j];
+								if ([tileIndex x] == sprite.index.x && [tileIndex y] == sprite.index.y)
+								{
+									[_tilesToNull addObject:sprite];
+									break;
+								}
+							}
 							
-							sprite.index = cardAction.newIndex;
+							sprite.index = cardAction.updatedIndex;
                             _cardSprites[ sprite.index.x ][ sprite.index.y ] = sprite;
-							
-							// If the tile the object is moving to is marked to be null remove it.
-                            if ([_tilesToNull indexOfObject:sprite.index] != NSNotFound)
-								[_tilesToNull removeObject:sprite.index];
 
+							*-*
+							// If the tile the object is moving to is marked to be null remove it.
+							for (int j = 0; j < [_tilesToNull count]; j++)
+							{
+								TileIndex* tileIndex = _tilesToNull[j];
+								if ([tileIndex x] != sprite.index.x || [tileIndex y] != sprite.index.y)
+								{
+									[_tilesToNull removeObject:sprite.index];
+								}
+							}
+							              
 							
 							
                             // Remove the reference to this card action
@@ -257,7 +284,7 @@ NSMutableArray*			_tilesToNull;
                 else
                 {
                     // Set the card's value and its texture
-                    [sprite setValueAndAppearance: cardAction.newValue];
+                    [sprite setValueAndAppearance: cardAction.updatedValue];
                 }
             }
             
@@ -265,10 +292,11 @@ NSMutableArray*			_tilesToNull;
             for ( int i = 0; i < [_otherActions count]; i++ )
             {
                 CardAction* cardAction = _otherActions[ i ];
-                if ( cardAction.newValue == 2048 )
+                if ( cardAction.updatedValue == 2048 )
                 {
                     // If an action has a newValue of 2048, the player wins -- switch view to the win scene
                     [_controller presentViewController: _controller.winScreen animated: YES completion: nil];
+					return;
 
                 }
             }
@@ -362,7 +390,7 @@ NSMutableArray*			_tilesToNull;
     {
         // Check if the action is a move -- Move these actions into the _moveActions array.
         CardAction* action = _otherActions[ i ];
-        if ( action.lookupIndex.x != action.newIndex.x || action.lookupIndex.y != action.newIndex.y )
+        if ( action.lookupIndex.x != action.updatedIndex.x || action.lookupIndex.y != action.updatedIndex.y )
         {
             [_moveActions addObject: action];
             [_otherActions removeObject: action];

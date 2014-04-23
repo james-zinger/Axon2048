@@ -10,7 +10,7 @@
 
 @interface Leaderboard : NSObject
 
--( NSArray* ) getLeaderboard;
+-( NSArray* ) retrieveLeaderboard;
 
 -( void ) saveLeaderboard;
 

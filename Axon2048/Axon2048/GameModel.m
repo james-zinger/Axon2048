@@ -47,9 +47,9 @@ Leaderboard* _leaderboard;
     return [_Board score];
 }
 
-- (NSArray*) getLeaderboard
+- (NSArray*) retrieveLeaderboard
 {
-    return [_leaderboard getLeaderboard];
+    return [_leaderboard retrieveLeaderboard];
 }
 
 - (void) applicationClosing

@@ -1,4 +1,4 @@
-//
+ //
 //  Board.m
 //  Axon2048
 //
@@ -30,7 +30,7 @@ int _Size;
         for (int j = 0; j < Size; j++)
         {
             
-            TileIndex *index;
+            TileIndex *index = [[TileIndex alloc] init];
             index.x = i;
             index.y = j;
             _TileGrid[i][j] = [[Tile alloc]initAtIndex:index];
@@ -62,7 +62,7 @@ int _Size;
 
 - (TileIndex*) addCardAtRandomIndex
 {
-    TileIndex *index;
+    TileIndex *index = [[TileIndex alloc]init];
     
     NSMutableArray* freeTiles = [self getEmptyTiles];
     
@@ -82,6 +82,8 @@ int _Size;
     [_Cards addObject:newCard];
     
     tile.Card = newCard;
+    
+    NSLog([NSString stringWithFormat:@"Random Index: %d - %d", tile.Index.x, tile.Index.y ]);
     
     return tile.Index;
 }
@@ -173,9 +175,9 @@ int _Size;
  
     // Row Forward
     // Col Forward
-    for (int x = 0; x < _Size; x++)
+    for (int y = 0; y < _Size; y++)
     {
-        for (int y = 0; y < _Size; y++)
+        for (int x = 0; x < _Size; x++)
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
@@ -198,9 +200,9 @@ int _Size;
     
     // Row Backward
     // Col Backward
-    for (int x = _Size - 1; x >= 0; x--)
+    for (int y = _Size - 1; y >= 0; y--)
     {
-        for (int y = _Size - 1; y >= 0; y--)
+        for (int x = 0; x > _Size; x++)
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
@@ -222,9 +224,9 @@ int _Size;
     
     // Col Forward
     // Row Forward
-    for (int y = 0; y < _Size; y++)
+    for (int x = 0; x < _Size; x++)
     {
-        for (int x = 0; x < _Size; x++)
+        for (int y = 0; y < _Size; y++)
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
@@ -246,10 +248,10 @@ int _Size;
     NSMutableArray* changes = [[NSMutableArray alloc] init];
    
     //Col Backward
-    //Row Backward
-    for (int y = _Size - 1; y >= 0; y--)
+    //Row Forward
+    for (int x = _Size - 1; x >= 0; x--)
     {
-        for (int x = _Size - 1; x >= 0; x--)
+        for (int y = 0; y < _Size; y++)
         {
             Tile* tile = _TileGrid[x][y];
             if ([tile Card] == nil)
@@ -300,8 +302,8 @@ int _Size;
         CardAction* action  = [[CardAction alloc] init];
         action.lookupIndex  = Tile1.Index;
         action.shouldDelete = NO;
-        action.newValue     = card.Value;
-        action.newIndex     = Tile2.Index;
+        action.updatedValue     = card.Value;
+        action.updatedIndex     = Tile2.Index;
         [changes addObject:action];
         
     }
@@ -313,8 +315,8 @@ int _Size;
         
         CardAction* action1  = [[CardAction alloc] init];
         action1.lookupIndex  = Tile1.Index;
-        action1.newIndex     = Tile2.Index;
-        action1.newValue     = card.Value;
+        action1.updatedIndex     = Tile2.Index;
+        action1.updatedValue     = card.Value;
         action1.shouldDelete = YES;
         [changes addObject:action1];
         
@@ -323,8 +325,8 @@ int _Size;
         
         CardAction* action2  = [[CardAction alloc]init];
         action2.lookupIndex  = Tile2.Index;
-        action2.newIndex     = Tile2.Index;
-        action2.newValue     = targetCard.Value;
+        action2.updatedIndex = Tile2.Index;
+        action2.updatedValue = targetCard.Value;
         action2.shouldDelete = NO;
         [changes addObject:action2];
         

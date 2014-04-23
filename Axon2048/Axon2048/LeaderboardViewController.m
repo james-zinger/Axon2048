@@ -32,19 +32,19 @@
     
     // Fetch the array of scores from the model
     GameModel* model = [GameModel Instance];
-    NSArray* scores = [model getLeaderboard];
+    NSArray* scores = [model retrieveLeaderboard];
     
     // Fill the leaderboard labels with content
-    _leader01Label.text = [@"1)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 0]]];
-    _leader02Label.text = [@"2)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 1]]];
-    _leader03Label.text = [@"3)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 2]]];
-    _leader04Label.text = [@"4)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 3]]];
-    _leader05Label.text = [@"5)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 4]]];
-    _leader06Label.text = [@"6)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 5]]];
-    _leader07Label.text = [@"7)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 6]]];
-    _leader08Label.text = [@"8)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 7]]];
-    _leader09Label.text = [@"9)  " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 8]]];
-    _leader10Label.text = [@"10) " stringByAppendingString: [NSString stringWithFormat: @"%d", (int)[scores objectAtIndex: 9]]];
+    _leader01Label.text = [@"1)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 0] integerValue]]];
+    _leader02Label.text = [@"2)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 1] integerValue]]];
+    _leader03Label.text = [@"3)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 2] integerValue]]];
+    _leader04Label.text = [@"4)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 3] integerValue]]];
+    _leader05Label.text = [@"5)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 4] integerValue]]];
+    _leader06Label.text = [@"6)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 5] integerValue]]];
+    _leader07Label.text = [@"7)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 6] integerValue]]];
+    _leader08Label.text = [@"8)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 7] integerValue]]];
+    _leader09Label.text = [@"9)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 8] integerValue]]];
+    _leader10Label.text = [@"10)\t\t" stringByAppendingString: [NSString stringWithFormat: @"%d", [(NSNumber*)[scores objectAtIndex: 9] integerValue]]];
 }
 
 

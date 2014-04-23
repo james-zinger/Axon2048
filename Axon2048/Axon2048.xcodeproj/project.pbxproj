@@ -54,6 +54,7 @@
 		3EAE3E2718FF73D0000992D5 /* CardAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE3E2618FF73D0000992D5 /* CardAction.m */; };
 		3EC9AF5E1905DDFD00D26CC3 /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9AF5D1905DDFD00D26CC3 /* CardSprite.m */; };
 		6644C4091905AEED00271C3D /* Leaderboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6644C4081905AEED00271C3D /* Leaderboard.m */; };
+		667E070D19072E0700F6C4A7 /* TileIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 667E070C19072E0700F6C4A7 /* TileIndex.m */; };
 		66D9E79418FF1F25000B74AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79318FF1F25000B74AC /* Foundation.framework */; };
 		66D9E79618FF1F25000B74AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79518FF1F25000B74AC /* CoreGraphics.framework */; };
 		66D9E79818FF1F25000B74AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D9E79718FF1F25000B74AC /* UIKit.framework */; };
@@ -138,6 +139,7 @@
 		3EC9AF5D1905DDFD00D26CC3 /* CardSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSprite.m; sourceTree = "<group>"; };
 		6644C4071905AEED00271C3D /* Leaderboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leaderboard.h; sourceTree = "<group>"; };
 		6644C4081905AEED00271C3D /* Leaderboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leaderboard.m; sourceTree = "<group>"; };
+		667E070C19072E0700F6C4A7 /* TileIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileIndex.m; sourceTree = "<group>"; };
 		66D9E79018FF1F25000B74AC /* Axon2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Axon2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D9E79318FF1F25000B74AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66D9E79518FF1F25000B74AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -399,6 +401,7 @@
 				3EAE3E2618FF73D0000992D5 /* CardAction.m */,
 				66D9E7D918FF2BE2000B74AC /* Direction.h */,
 				66D9E7D318FF288F000B74AC /* TileIndex.h */,
+				667E070C19072E0700F6C4A7 /* TileIndex.m */,
 				66D9E7B218FF1F25000B74AC /* Images.xcassets */,
 				66D9E79C18FF1F25000B74AC /* Supporting Files */,
 			);
@@ -589,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D9E7D818FF2AF1000B74AC /* Board.m in Sources */,
+				667E070D19072E0700F6C4A7 /* TileIndex.m in Sources */,
 				66D9E7AF18FF1F25000B74AC /* GameplayScene.m in Sources */,
 				66D9E7E118FF36C2000B74AC /* Card.m in Sources */,
 				3EC9AF5E1905DDFD00D26CC3 /* CardSprite.m in Sources */,
